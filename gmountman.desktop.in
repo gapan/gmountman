@@ -1,0 +1,10 @@
+[Desktop Entry]
+_Name=Mount Manager
+_Comment=A mount manager for local devices that uses gvfs
+Exec=gmountman
+Icon=gmountman
+Terminal=false
+Type=Application
+Categories=Application;System;
+StartupNotify=true
+Encoding=UTF-8
