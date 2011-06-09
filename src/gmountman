@@ -1,0 +1,299 @@
+#!/usr/bin/env python
+
+import gtk
+import os
+import ConfigParser
+import gio
+
+# Internationalization
+import locale
+import gettext
+import gtk.glade
+gettext.bindtextdomain("gmountman", "/usr/share/locale")
+gettext.textdomain("gmountman")
+gettext.install("gmountman", "/usr/share/locale", unicode=1)
+gtk.glade.bindtextdomain("gmountman", "/usr/share/locale")
+gtk.glade.textdomain("gmountman")
+
+class GMountMan:
+	config = ConfigParser.RawConfigParser()
+	config_file = os.path.expanduser('~/.config/gmountman')
+	win_height = 0
+	win_width = 0
+
+	vm = gio.VolumeMonitor()
+
+	def set_default_window_size(self):
+		try:
+			self.config.read(self.config_file)
+			width = self.config.getint('Window', 'width')
+			height = self.config.getint('Window', 'height')
+			self.window.set_default_size(width, height)
+		except (ConfigParser.NoOptionError, ConfigParser.NoSectionError):
+			try:
+				w = gtk.gdk.get_default_root_window()
+				p = gtk.gdk.atom_intern('_NET_WORKAREA')
+				width, height = w.property_get(p)[2][2:4]
+				if width < 400:
+					req_width = width
+				else:
+					req_width = 400
+				req_height = height*0.5
+				if req_height < 450:
+					req_height = height
+				else:
+					req_height = 450
+				self.window.set_default_size(int(req_width), int(req_height))
+			except TypeError:
+				self.window.set_default_size(400, 450)
+
+	def devices(self):
+		mounted = []
+		devices = []
+		icon_theme = gtk.icon_theme_get_default()
+		mounts = self.vm.get_mounts()
+		if mounts != []:
+			for m in mounts:
+				# sometimes unmounting is completed a
+				# short while after vm.get_mounts() is
+				# run, leading to false mounts. Add the
+				# AttributeError exception to catch this
+				try:
+					icon_filename = icon_theme.choose_icon(m.get_icon().get_names(), 24, 0).get_filename()
+					icon = gtk.gdk.pixbuf_new_from_file(icon_filename)
+					name = m.get_name()
+					node = m.get_volume().get_identifier('unix-device')
+					mountpoint = m.get_root().get_path()
+					can_mount = True
+					can_unmount = m.can_unmount()
+					can_eject = m.can_eject()
+					if not m.is_shadowed():
+						mounted.append(node)
+						devices.append([icon, name,
+							node, mountpoint,
+							can_mount, can_unmount,
+							can_eject])
+				except AttributeError:
+					pass
+		for v in self.vm.get_volumes():
+			node = v.get_identifier('unix-device')
+			if node not in mounted:
+				icon_filename =	icon_theme.choose_icon(v.get_icon().get_names(), 24, 0).get_filename()
+				icon = gtk.gdk.pixbuf_new_from_file(icon_filename)
+				name = v.get_name()
+				mountpoint = None
+				can_mount = v.can_mount()
+				can_unmount = None
+				can_eject = v.can_eject()
+				devices.append([icon, name, node,
+					mountpoint, can_mount,
+					can_unmount, can_eject])
+		return sorted(devices, key=lambda node: node[2])
+
+	def update_list(self):
+		device = None
+		try:
+			selectedline = self.treeview_devices.get_selection()
+			self.lisstore_devices, iter = selectedline.get_selected()
+			device = self.liststore_devices.get_value(iter, 2)
+		except TypeError:
+			pass
+		self.liststore_devices.clear()
+		for d in self.devices(): 
+			self.liststore_devices.append(d)
+		if device is not None:
+			iter = self.liststore_devices.get_iter_first()
+			count = 0
+			while ( iter is not None):
+				if device != self.liststore_devices.get_value(
+						iter, 2):
+					count += 1
+				else:
+					break
+				iter = self.liststore_devices.iter_next(iter)
+			self.treeview_devices.set_cursor(count)
+		self.treeview_devices.grab_focus()
+
+	def on_devices_changed(self, vm, volume):
+		self.update_list()
+
+	def on_treeview_devices_key_release_event(self, widget, event):
+		# only lowercase keys are needed
+		mount_keys = ['m', 'greek_mu']
+		unmount_keys = ['u', 'greek_theta']
+		eject_keys = ['e', 'greek_epsilon']
+		button = gtk.gdk.keyval_name(event.keyval).lower()
+		try:
+			selectedline = self.treeview_devices.get_selection()
+			self.lisstore_devices, iter = selectedline.get_selected()
+			device = self.liststore_devices.get_value(iter, 2)
+			if self.liststore_devices.get_value(iter, 3) is None:
+				can_mount = self.liststore_devices.get_value(iter, 4)
+			else:
+				can_mount = False
+			can_unmount = self.liststore_devices.get_value(iter, 5)
+			can_eject = self.liststore_devices.get_value(iter, 6)
+			if can_mount:
+				if button in mount_keys:
+					self.mount_device(device)
+			if can_unmount:
+				if button in unmount_keys:
+					self.unmount_device(device)
+			if can_eject:
+				if button in eject_keys:
+					self.eject_device(device)
+		except TypeError:
+			pass
+
+	def on_treeview_devices_cursor_changed(self, widget):
+		selectedline = self.treeview_devices.get_selection()
+		self.lisstore_devices, iter = selectedline.get_selected()
+		if iter is None:
+			self.treeview_devices.set_cursor(0)
+			self.lisstore_devices, iter = selectedline.get_selected()
+		if self.liststore_devices.get_value(iter, 3) is None:
+			can_mount = self.liststore_devices.get_value(iter, 4)
+		else:
+			can_mount = False
+		can_unmount = self.liststore_devices.get_value(iter, 5)
+		can_eject = self.liststore_devices.get_value(iter, 6)
+		if can_mount:
+			self.button_mount.set_sensitive(True)
+		else:
+			self.button_mount.set_sensitive(False)
+		if can_unmount:
+			self.button_umount.set_sensitive(True)
+		else:
+			self.button_umount.set_sensitive(False)
+		if can_eject:
+			self.button_eject.set_sensitive(True)
+		else:
+			self.button_eject.set_sensitive(False)
+
+	# I really have no idea what this callback should do, but it is
+	# needed for the mount/unmount/eject_device functions that
+	# follow
+	def callback_none(self, flags, cancellable, user_data):
+		pass
+
+	def mount_device(self, device):
+		volumes = self.vm.get_volumes()
+		for v in volumes:
+			node = v.get_identifier('unix-device')
+			if node == device:
+				v.mount(None, self.callback_none, gio.MOUNT_UNMOUNT_NONE, None, None)
+	
+	def unmount_device(self, device):
+		mounts = self.vm.get_mounts()
+		for m in mounts:
+			node = m.get_volume().get_identifier('unix-device')
+			if node == device:
+				m.unmount(self.callback_none, gio.MOUNT_UNMOUNT_NONE, None, None)
+
+	def eject_device(self, device):
+		volumes = self.vm.get_volumes()
+		for v in volumes:
+			node = v.get_identifier('unix-device')
+			if node == device:
+				v.eject(self.callback_none, gio.MOUNT_UNMOUNT_NONE, None, None)
+
+	def on_button_mount_clicked(self, widget):
+		selectedline = self.treeview_devices.get_selection()
+		self.lisstore_devices, iter = selectedline.get_selected()
+		device = self.liststore_devices.get_value(iter, 2)
+		self.mount_device(device)
+		self.update_list()
+
+	def on_button_umount_clicked(self, widget):
+		selectedline = self.treeview_devices.get_selection()
+		self.lisstore_devices, iter = selectedline.get_selected()
+		device = self.liststore_devices.get_value(iter, 2)
+		self.unmount_device(device)
+		self.update_list()
+
+	def on_button_eject_clicked(self, widget):
+		selectedline = self.treeview_devices.get_selection()
+		self.lisstore_devices, iter = selectedline.get_selected()
+		device = self.liststore_devices.get_value(iter, 2)
+		self.eject_device(device)
+		self.update_list()
+
+	def on_button_about_clicked(self, widget):
+		self.aboutdialog.show()
+
+	def on_aboutdialog_delete_event(self, widget, event):
+		self.aboutdialog.hide()
+		return True
+
+	def on_aboutdialog_response(self, widget, data=None):
+		self.aboutdialog.hide()
+
+	def on_gmountman_configure_event(self, widget, data=None):
+		self.win_width, self.win_height = self.window.get_size()
+
+	def gtk_main_quit(self, widget, data=None):
+		if not os.path.isdir(os.path.expanduser('~/.config')):
+			os.mkdir(os.path.expanduser('~/.config'))
+		try:
+			self.config.add_section('Window')
+		except ConfigParser.DuplicateSectionError:
+			pass
+		self.config.set('Window', 'width', self.win_width)
+		self.config.set('Window', 'height', self.win_height)
+		with open(self.config_file, 'wb') as configfile:
+			self.config.write(configfile)
+		gtk.main_quit()
+
+	def __init__(self):
+		builder = gtk.Builder()
+		if os.path.exists('gmountman.glade'):
+			builder.add_from_file('gmountman.glade')
+		elif os.path.exists('/usr/share/gmountman/gmountman.glade'):
+			builder.add_from_file('/usr/share/gmountman/gmountman.glade')
+		self.window = builder.get_object('gmountman')
+
+		#
+		# Main window
+		#
+		self.window = builder.get_object('gmountman')
+		self.treeview_devices = builder.get_object('treeview_devices')
+		self.liststore_devices = builder.get_object('liststore_devices')
+		self.button_mount = builder.get_object('button_mount')
+		self.button_umount = builder.get_object('button_umount')
+		self.button_eject = builder.get_object('button_eject')
+		self.button_close = builder.get_object('button_close')
+		self.button_about = builder.get_object('button_about')
+		self.treeview_devices = builder.get_object('treeview_devices')
+		self.treeviewcolumn_icon = builder.get_object('treeviewcolumn_icon')
+		self.treeviewcolumn_icon.set_title('')
+		self.treeviewcolumn_name = builder.get_object('treeviewcolumn_name')
+		self.treeviewcolumn_name.set_title(_('Name'))
+		self.treeviewcolumn_node = builder.get_object('treeviewcolumn_node')
+		self.treeviewcolumn_node.set_title(_('Device'))
+		self.treeviewcolumn_mountpoint = builder.get_object('treeviewcolumn_mountpoint')
+		self.treeviewcolumn_mountpoint.set_title(_('Mount Point'))
+
+		#
+		# About dialog
+		#
+		self.aboutdialog = builder.get_object('aboutdialog')
+
+		# Set default window size
+		self.set_default_window_size()
+
+		self.update_list()
+
+		# Connect signals
+		self.vm.connect('volume-added', self.on_devices_changed)
+		self.vm.connect('volume-removed', self.on_devices_changed)
+		self.vm.connect('volume-changed', self.on_devices_changed)
+		self.vm.connect('mount-added', self.on_devices_changed)
+		self.vm.connect('mount-removed', self.on_devices_changed)
+		self.vm.connect('mount-changed', self.on_devices_changed)
+
+		builder.connect_signals(self)
+
+if __name__ == "__main__":
+	app = GMountMan()
+	app.window.show()
+	gtk.main()
