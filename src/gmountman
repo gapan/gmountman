@@ -34,18 +34,15 @@ class GMountMan:
 				w = gtk.gdk.get_default_root_window()
 				p = gtk.gdk.atom_intern('_NET_WORKAREA')
 				width, height = w.property_get(p)[2][2:4]
-				if width < 400:
+				req_width = int(width*0.7)
+				req_height = int(height*0.7)
+				if req_width < 500:
 					req_width = width
-				else:
-					req_width = 400
-				req_height = height*0.5
 				if req_height < 450:
 					req_height = height
-				else:
-					req_height = 450
-				self.window.set_default_size(int(req_width), int(req_height))
+				self.window.set_default_size(req_width, req_height)
 			except TypeError:
-				self.window.set_default_size(400, 450)
+				self.window.set_default_size(500, 450)
 
 	def devices(self):
 		mounted = []
