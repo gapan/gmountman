@@ -18,11 +18,6 @@ install -d -m 755 $DESTDIR/usr/share/icons/hicolor/scalable/apps
 install -m 644 icons/gmountman.svg \
 $DESTDIR/usr/share/icons/hicolor/scalable/apps
 
-if [ -f man/gmountman.man ]; then
-	install -d -m 755 $DESTDIR/usr/man/man1
-	install -m 644 man/gmountman.man $DESTDIR/usr/man/man1/gmountman.1
-fi
-
 for i in `ls po/*.po|sed "s/po\/\(.*\)\.po/\1/"`; do
 	install -d -m 755 $DESTDIR/usr/share/locale/$i/LC_MESSAGES
 	install -m 644 po/$i.mo $DESTDIR/usr/share/locale/$i/LC_MESSAGES/gmountman.mo
