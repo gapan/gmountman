@@ -185,10 +185,12 @@ class GMountMan:
 	def unmount_device(self, device):
 		mounts = self.vm.get_mounts()
 		for m in mounts:
-			node = m.get_volume().get_identifier('unix-device')
-			if node == device:
-				m.unmount(self.callback_none, gio.MOUNT_UNMOUNT_NONE, None, None)
-				break
+			volume = m.get_volume()
+			if volume is not None:
+				node = volume.get_identifier('unix-device')
+				if node == device:
+					m.unmount(self.callback_none, gio.MOUNT_UNMOUNT_NONE, None, None)
+					break
 
 	def eject_device(self, device):
 		volumes = self.vm.get_volumes()
