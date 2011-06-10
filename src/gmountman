@@ -145,15 +145,17 @@ class GMountMan:
 	def on_treeview_devices_cursor_changed(self, widget):
 		selectedline = self.treeview_devices.get_selection()
 		self.lisstore_devices, iter = selectedline.get_selected()
-		if iter is None:
-			self.treeview_devices.set_cursor(0)
-			self.lisstore_devices, iter = selectedline.get_selected()
-		if self.liststore_devices.get_value(iter, 3) is None:
-			can_mount = self.liststore_devices.get_value(iter, 4)
+		if iter is not None:
+			if self.liststore_devices.get_value(iter, 3) is None:
+				can_mount = self.liststore_devices.get_value(iter, 4)
+			else:
+				can_mount = False
+			can_unmount = self.liststore_devices.get_value(iter, 5)
+			can_eject = self.liststore_devices.get_value(iter, 6)
 		else:
 			can_mount = False
-		can_unmount = self.liststore_devices.get_value(iter, 5)
-		can_eject = self.liststore_devices.get_value(iter, 6)
+			can_unmount = False
+			can_eject = False
 		if can_mount:
 			self.button_mount.set_sensitive(True)
 		else:
