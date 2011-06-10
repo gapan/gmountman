@@ -180,6 +180,7 @@ class GMountMan:
 			node = v.get_identifier('unix-device')
 			if node == device:
 				v.mount(None, self.callback_none, gio.MOUNT_UNMOUNT_NONE, None, None)
+				break
 	
 	def unmount_device(self, device):
 		mounts = self.vm.get_mounts()
@@ -187,6 +188,7 @@ class GMountMan:
 			node = m.get_volume().get_identifier('unix-device')
 			if node == device:
 				m.unmount(self.callback_none, gio.MOUNT_UNMOUNT_NONE, None, None)
+				break
 
 	def eject_device(self, device):
 		volumes = self.vm.get_volumes()
@@ -194,6 +196,7 @@ class GMountMan:
 			node = v.get_identifier('unix-device')
 			if node == device:
 				v.eject(self.callback_none, gio.MOUNT_UNMOUNT_NONE, None, None)
+				break
 
 	def on_button_mount_clicked(self, widget):
 		selectedline = self.treeview_devices.get_selection()
