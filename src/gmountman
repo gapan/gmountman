@@ -130,14 +130,14 @@ class GMountMan:
 				can_mount = False
 			can_unmount = self.liststore_devices.get_value(iter, 5)
 			can_eject = self.liststore_devices.get_value(iter, 6)
-			if can_mount:
-				if button in mount_keys:
+			if button in mount_keys:
+				if can_mount:
 					self.mount_device(device)
-			if can_unmount:
-				if button in unmount_keys:
+			elif button in unmount_keys:
+				if can_unmount:
 					self.unmount_device(device)
-			if can_eject:
-				if button in eject_keys:
+			elif button in eject_keys:
+				if can_eject:
 					self.eject_device(device)
 		except TypeError:
 			pass
@@ -167,9 +167,8 @@ class GMountMan:
 		else:
 			self.button_eject.set_sensitive(False)
 
-	# I really have no idea what this callback should do, but it is
-	# needed for the mount/unmount/eject_device functions that
-	# follow
+	# This is run when the mount/unmount/eject request is finished.
+	# Don't need to run anything then, so we'll just do nothing.
 	def callback_none(self, flags, cancellable, user_data):
 		pass
 
