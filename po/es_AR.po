@@ -2,55 +2,56 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # 
-#   <akuna@free.fr>, 2011.
+#   <seacat.linux@gmail.com>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: Salix\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-06-09 16:59+0300\n"
-"PO-Revision-Date: 2011-06-09 18:30+0000\n"
-"Last-Translator: Akuna <akuna@free.fr>\n"
-"Language-Team: French (http://www.transifex.net/projects/p/salix/team/fr/)\n"
+"PO-Revision-Date: 2011-06-10 01:58+0000\n"
+"Last-Translator: seacat <seacat.linux@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: fr\n"
-"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+"Language: es_AR\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
 #: src/gmountman.glade:25 gmountman.desktop.in.h:2
 msgid "Mount Manager"
-msgstr "Gestionnaire de Montage"
+msgstr "Administrador de Montaje"
 
 #: src/gmountman.glade:114
 msgid "Mount (m)"
-msgstr "Monter (m)"
+msgstr "Montar (m)"
 
 #: src/gmountman.glade:129
 msgid "Unmount (u)"
-msgstr "Démonter (u)"
+msgstr "Desmontar (u)"
 
 #: src/gmountman.glade:144
 msgid "Eject (e)"
-msgstr "Éjecter (e)"
+msgstr "Expulsar (e)"
 
 #: src/gmountman.glade:229 gmountman.desktop.in.h:1
 msgid "A mount manager for local devices that uses gvfs"
-msgstr "Un gestionnaire de montage pour périphériques locaux qui utilise gvfs"
+msgstr ""
+"Un administrador de montaje para dispositivos locales que utiliza gvfs"
 
 #: src/gmountman.glade:907
 msgid "translator-credits"
-msgstr "Pierrick Le Brun"
+msgstr "Fernando Velo"
 
 #: src/gmountman:270
 msgid "Name"
-msgstr "Nom"
+msgstr "Nombre"
 
 #: src/gmountman:272
 msgid "Device"
-msgstr "Périphérique"
+msgstr "Dispositivo"
 
 #: src/gmountman:274
 msgid "Mount Point"
-msgstr "Point de montage"
+msgstr "Punto de montaje"
 
 
