@@ -4,6 +4,7 @@ import gtk
 import os
 import ConfigParser
 import gio
+import subprocess
 
 # Internationalization
 import locale
@@ -43,6 +44,23 @@ class GMountMan:
 				self.window.set_default_size(req_width, req_height)
 			except TypeError:
 				self.window.set_default_size(500, 450)
+
+
+	def get_defaultfm(self):
+		try:
+			self.config.read(self.config_file)
+			filemanager = self.config.get('Preferences', 'filemanager')
+		except (ConfigParser.NoOptionError, ConfigParser.NoSectionError):
+			filemanager = 'xdg-open'
+		if filemanager == 'xdg-open':
+			self.radiobutton_prefs_defaultfm.set_active(True)
+			self.entry_prefs_customfm.set_text('')
+			self.entry_prefs_customfm.set_sensitive(False)
+		else:
+			self.radiobutton_prefs_customfm.set_active(True)
+			self.entry_prefs_customfm.set_text(filemanager)
+			self.entry_prefs_customfm.set_sensitive(True)
+		return filemanager
 
 	def devices(self):
 		mounted = []
@@ -114,33 +132,42 @@ class GMountMan:
 	def on_devices_changed(self, vm, volume):
 		self.update_list()
 
-	def on_treeview_devices_key_release_event(self, widget, event):
+	def on_key_release_event(self, widget, event):
 		# only lowercase keys are needed
 		mount_keys = ['m', 'greek_mu']
 		unmount_keys = ['u', 'greek_theta']
 		eject_keys = ['e', 'greek_epsilon']
-		button = gtk.gdk.keyval_name(event.keyval).lower()
-		try:
-			selectedline = self.treeview_devices.get_selection()
-			self.lisstore_devices, iter = selectedline.get_selected()
-			device = self.liststore_devices.get_value(iter, 2)
-			if self.liststore_devices.get_value(iter, 3) is None:
-				can_mount = self.liststore_devices.get_value(iter, 4)
-			else:
-				can_mount = False
-			can_unmount = self.liststore_devices.get_value(iter, 5)
-			can_eject = self.liststore_devices.get_value(iter, 6)
-			if button in mount_keys:
-				if can_mount:
-					self.mount_device(device)
-			elif button in unmount_keys:
-				if can_unmount:
-					self.unmount_device(device)
-			elif button in eject_keys:
-				if can_eject:
-					self.eject_device(device)
-		except TypeError:
-			pass
+		open_keys = ['o', 'greek_omicron']
+		prefs_keys = ['p', 'greek_pi']
+		key = gtk.gdk.keyval_name(event.keyval).lower()
+		if key in prefs_keys:
+			self.dialog_prefs.show()
+		else:
+			try:
+				selectedline = self.treeview_devices.get_selection()
+				self.lisstore_devices, iter = selectedline.get_selected()
+				device = self.liststore_devices.get_value(iter, 2)
+				mountpoint = self.liststore_devices.get_value(iter, 3)
+				if self.liststore_devices.get_value(iter, 3) is None:
+					can_mount = self.liststore_devices.get_value(iter, 4)
+				else:
+					can_mount = False
+				can_unmount = self.liststore_devices.get_value(iter, 5)
+				can_eject = self.liststore_devices.get_value(iter, 6)
+				if key in mount_keys:
+					if can_mount:
+						self.mount_device(device)
+				elif key in unmount_keys:
+					if can_unmount:
+						self.unmount_device(device)
+				elif key in eject_keys:
+					if can_eject:
+						self.eject_device(device)
+				elif key in open_keys:
+					if can_unmount:
+						self.open_mountpoint(mountpoint)
+			except TypeError:
+				pass
 
 	def on_treeview_devices_cursor_changed(self, widget):
 		selectedline = self.treeview_devices.get_selection()
@@ -162,8 +189,10 @@ class GMountMan:
 			self.button_mount.set_sensitive(False)
 		if can_unmount:
 			self.button_umount.set_sensitive(True)
+			self.button_open.set_sensitive(True)
 		else:
 			self.button_umount.set_sensitive(False)
+			self.button_open.set_sensitive(False)
 		if can_eject:
 			self.button_eject.set_sensitive(True)
 		else:
@@ -200,6 +229,17 @@ class GMountMan:
 				v.eject(self.callback_none, gio.MOUNT_UNMOUNT_NONE, None, None)
 				break
 
+	def open_mountpoint(self, mountpoint):
+		filemanager = self.defaultfm
+		command = []
+		for i in filemanager.split(' '):
+			command.append(i)
+		command.append(mountpoint)
+		try:
+			subprocess.Popen(command)
+		except OSError:
+			pass
+
 	def on_button_mount_clicked(self, widget):
 		selectedline = self.treeview_devices.get_selection()
 		self.lisstore_devices, iter = selectedline.get_selected()
@@ -221,6 +261,32 @@ class GMountMan:
 		self.eject_device(device)
 		self.update_list()
 
+	def on_button_open_clicked(self, widget):
+		selectedline = self.treeview_devices.get_selection()
+		self.lisstore_devices, iter = selectedline.get_selected()
+		mountpoint = self.liststore_devices.get_value(iter, 3)
+		self.open_mountpoint(mountpoint)
+
+	def on_button_prefs_clicked(self, widget):
+		filemanager = self.defaultfm
+		if filemanager == 'xdg-open':
+			self.radiobutton_prefs_defaultfm.set_active(True)
+			self.entry_prefs_customfm.set_text('')
+			self.entry_prefs_customfm.set_sensitive(False)
+		else:
+			self.radiobutton_prefs_customfm.set_active(True)
+			self.entry_prefs_customfm.set_text(filemanager)
+			self.entry_prefs_customfm.set_sensitive(True)
+		self.dialog_prefs.show()
+
+	def on_radiobutton_prefs_defaultfm_toggled(self, widget):
+		entry_state = self.radiobutton_prefs_customfm.get_active()
+		self.entry_prefs_customfm.set_sensitive(entry_state)
+
+	def on_dialog_prefs_delete_event(self, widget, event):
+		self.dialog_prefs.hide()
+		return True
+
 	def on_button_about_clicked(self, widget):
 		self.aboutdialog.show()
 
@@ -231,20 +297,51 @@ class GMountMan:
 	def on_aboutdialog_response(self, widget, data=None):
 		self.aboutdialog.hide()
 
+	def on_button_prefs_ok_clicked(self, widget):
+		if self.radiobutton_prefs_defaultfm.get_active():
+			filemanager = 'xdg-open'
+		else:
+			filemanager = self.entry_prefs_customfm.get_text()
+		print filemanager
+		self.defaultfm = filemanager
+		self.write_config(self.win_width, self.win_height, filemanager)
+		self.dialog_prefs.hide()
+	
+	def on_button_prefs_cancel_clicked(self, widget):
+		if self.defaultfm == 'xdg-open':
+			self.radiobutton_prefs_defaultfm.set_active(True)
+			self.entry_prefs_customfm.set_text('')
+			self.entry_prefs_customfm.set_sensitive(False)
+		else:
+			self.radiobutton_prefs_customfm.set_active(True)
+			self.entry_prefs_customfm.set_text(self.defaultfm)
+			self.entry_prefs_customfm.set_sensitive(True)
+			
+		self.dialog_prefs.hide()
+
 	def on_gmountman_configure_event(self, widget, data=None):
 		self.win_width, self.win_height = self.window.get_size()
 
-	def gtk_main_quit(self, widget, data=None):
+	def write_config(self, width, height, filemanager):
 		if not os.path.isdir(os.path.expanduser('~/.config')):
 			os.mkdir(os.path.expanduser('~/.config'))
 		try:
 			self.config.add_section('Window')
 		except ConfigParser.DuplicateSectionError:
 			pass
-		self.config.set('Window', 'width', self.win_width)
-		self.config.set('Window', 'height', self.win_height)
+		try:
+			self.config.add_section('Preferences')
+		except ConfigParser.DuplicateSectionError:
+			pass
+		self.config.set('Window', 'width', width)
+		self.config.set('Window', 'height', height)
+		self.config.set('Preferences', 'filemanager', filemanager)
 		with open(self.config_file, 'wb') as configfile:
 			self.config.write(configfile)
+
+	def gtk_main_quit(self, widget, data=None):
+		filemanager = self.defaultfm
+		self.write_config(self.win_width, self.win_height, filemanager)
 		gtk.main_quit()
 
 	def __init__(self):
@@ -264,6 +361,8 @@ class GMountMan:
 		self.button_mount = builder.get_object('button_mount')
 		self.button_umount = builder.get_object('button_umount')
 		self.button_eject = builder.get_object('button_eject')
+		self.button_open = builder.get_object('button_open')
+		self.button_prefs = builder.get_object('button_prefs')
 		self.button_close = builder.get_object('button_close')
 		self.button_about = builder.get_object('button_about')
 		self.treeview_devices = builder.get_object('treeview_devices')
@@ -281,10 +380,22 @@ class GMountMan:
 		#
 		self.aboutdialog = builder.get_object('aboutdialog')
 
+		#
+		# Prefs dialog
+		#
+		self.dialog_prefs = builder.get_object('dialog_prefs')
+		self.button_prefs_ok = builder.get_object('button_prefs_ok')
+		self.button_prefs_cancel = builder.get_object('button_prefs_cancel')
+		self.radiobutton_prefs_defaultfm = builder.get_object('radiobutton_prefs_defaultfm')
+		self.radiobutton_prefs_customfm = builder.get_object('radiobutton_prefs_customfm')
+		self.entry_prefs_customfm = builder.get_object('entry_prefs_customfm')
+
 		# Set default window size
 		self.set_default_window_size()
 
 		self.update_list()
+
+		self.defaultfm = self.get_defaultfm()
 
 		# Connect signals
 		self.vm.connect('volume-added', self.on_devices_changed)
