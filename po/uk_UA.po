@@ -2,56 +2,55 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # 
-#   <seacat.linux@gmail.com>, 2011.
+# Yarema aka Knedlyk <yupadmin@gmail.com>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: Salix\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-06-09 16:59+0300\n"
-"PO-Revision-Date: 2011-06-12 01:05+0000\n"
-"Last-Translator: gapan <vlahavas@gmail.com>\n"
+"PO-Revision-Date: 2011-06-15 10:10+0000\n"
+"Last-Translator: knedlyk <yupadmin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: es_AR\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Language: uk_UA\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
 #: src/gmountman.glade:25 gmountman.desktop.in.h:2
 msgid "Mount Manager"
-msgstr "Administrador de Montaje"
+msgstr "Менеджер монтувань"
 
 #: src/gmountman.glade:114
 msgid "Mount (m)"
-msgstr "Montar (m)"
+msgstr "Монтувати (m)"
 
 #: src/gmountman.glade:129
 msgid "Unmount (u)"
-msgstr "Desmontar (u)"
+msgstr "Відмонтувати (u)"
 
 #: src/gmountman.glade:144
 msgid "Eject (e)"
-msgstr "Expulsar (e)"
+msgstr "Витягнути (e)"
 
 #: src/gmountman.glade:229 gmountman.desktop.in.h:1
 msgid "A mount manager for local devices that uses gvfs"
-msgstr ""
-"Un administrador de montaje para dispositivos locales que utiliza gvfs"
+msgstr "Менеджер монтувань для локальних пристроїв, що використовують gvfs"
 
 #: src/gmountman.glade:907
 msgid "translator-credits"
-msgstr "Fernando Velo"
+msgstr "Yarema aka knedlyk <yupadmin@gmail.com>"
 
 #: src/gmountman:270
 msgid "Name"
-msgstr "Nombre"
+msgstr "Назва"
 
 #: src/gmountman:272
 msgid "Device"
-msgstr "Dispositivo"
+msgstr "Пристрій"
 
 #: src/gmountman:274
 msgid "Mount Point"
-msgstr "Punto de montaje"
+msgstr "Точка монтування"
 
 

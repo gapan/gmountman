@@ -2,56 +2,55 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # 
-#   <seacat.linux@gmail.com>, 2011.
+#   <hydrangea_and_snail@hotmail.com>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: Salix\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-06-09 16:59+0300\n"
-"PO-Revision-Date: 2011-06-12 01:05+0000\n"
-"Last-Translator: gapan <vlahavas@gmail.com>\n"
+"PO-Revision-Date: 2011-06-14 20:39+0000\n"
+"Last-Translator: tsuren <hydrangea_and_snail@hotmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: es_AR\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0\n"
 
 #: src/gmountman.glade:25 gmountman.desktop.in.h:2
 msgid "Mount Manager"
-msgstr "Administrador de Montaje"
+msgstr "マウントマネージャ-"
 
 #: src/gmountman.glade:114
 msgid "Mount (m)"
-msgstr "Montar (m)"
+msgstr "マウント（m）"
 
 #: src/gmountman.glade:129
 msgid "Unmount (u)"
-msgstr "Desmontar (u)"
+msgstr "マウントを解除（u)"
 
 #: src/gmountman.glade:144
 msgid "Eject (e)"
-msgstr "Expulsar (e)"
+msgstr "イジェクト（e）"
 
 #: src/gmountman.glade:229 gmountman.desktop.in.h:1
 msgid "A mount manager for local devices that uses gvfs"
-msgstr ""
-"Un administrador de montaje para dispositivos locales que utiliza gvfs"
+msgstr "ローカルデバイスをgvfsを使用してマウントするマネージャー"
 
 #: src/gmountman.glade:907
 msgid "translator-credits"
-msgstr "Fernando Velo"
+msgstr "翻訳者のクレジット"
 
 #: src/gmountman:270
 msgid "Name"
-msgstr "Nombre"
+msgstr "名前"
 
 #: src/gmountman:272
 msgid "Device"
-msgstr "Dispositivo"
+msgstr "デバイス"
 
 #: src/gmountman:274
 msgid "Mount Point"
-msgstr "Punto de montaje"
+msgstr "マウントポイント"
 
 

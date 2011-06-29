@@ -2,13 +2,14 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # 
+#   <futur.andy@googlemail.com>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: Salix\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-06-09 16:59+0300\n"
-"PO-Revision-Date: 2011-06-09 14:01+0000\n"
-"Last-Translator: gapan <vlahavas@gmail.com>\n"
+"PO-Revision-Date: 2011-06-12 01:05+0000\n"
+"Last-Translator: shador <futur.andy@googlemail.com>\n"
 "Language-Team: German (http://www.transifex.net/projects/p/salix/team/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,38 +19,38 @@ msgstr ""
 
 #: src/gmountman.glade:25 gmountman.desktop.in.h:2
 msgid "Mount Manager"
-msgstr ""
+msgstr "Datenträgerverwaltung"
 
 #: src/gmountman.glade:114
 msgid "Mount (m)"
-msgstr ""
+msgstr "Einhängen (m)"
 
 #: src/gmountman.glade:129
 msgid "Unmount (u)"
-msgstr ""
+msgstr "Aushängen (u)"
 
 #: src/gmountman.glade:144
 msgid "Eject (e)"
-msgstr ""
+msgstr "Auswerfen (e)"
 
 #: src/gmountman.glade:229 gmountman.desktop.in.h:1
 msgid "A mount manager for local devices that uses gvfs"
-msgstr ""
+msgstr "Datenträgerverwaltung für lokale Geräte, die gvfs benutzt"
 
 #: src/gmountman.glade:907
 msgid "translator-credits"
-msgstr ""
+msgstr "Andreas Born"
 
 #: src/gmountman:270
 msgid "Name"
-msgstr ""
+msgstr "Name"
 
 #: src/gmountman:272
 msgid "Device"
-msgstr ""
+msgstr "Gerät"
 
 #: src/gmountman:274
 msgid "Mount Point"
-msgstr ""
+msgstr "Einhängepunkt"
 
 

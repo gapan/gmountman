@@ -2,56 +2,55 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # 
-#   <seacat.linux@gmail.com>, 2011.
+# Ingemar Karlsson <ingemar@ingk.se>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: Salix\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-06-09 16:59+0300\n"
 "PO-Revision-Date: 2011-06-12 01:05+0000\n"
-"Last-Translator: gapan <vlahavas@gmail.com>\n"
+"Last-Translator: ingemar <ingemar@ingk.se>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: es_AR\n"
+"Language: sv\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
 #: src/gmountman.glade:25 gmountman.desktop.in.h:2
 msgid "Mount Manager"
-msgstr "Administrador de Montaje"
+msgstr "Monteringshanterare"
 
 #: src/gmountman.glade:114
 msgid "Mount (m)"
-msgstr "Montar (m)"
+msgstr "Montera (m)"
 
 #: src/gmountman.glade:129
 msgid "Unmount (u)"
-msgstr "Desmontar (u)"
+msgstr "Avmontera (u)"
 
 #: src/gmountman.glade:144
 msgid "Eject (e)"
-msgstr "Expulsar (e)"
+msgstr "Mata ut (e)"
 
 #: src/gmountman.glade:229 gmountman.desktop.in.h:1
 msgid "A mount manager for local devices that uses gvfs"
-msgstr ""
-"Un administrador de montaje para dispositivos locales que utiliza gvfs"
+msgstr "En monteringshanterare för lokala enheter som använder gvfs"
 
 #: src/gmountman.glade:907
 msgid "translator-credits"
-msgstr "Fernando Velo"
+msgstr "Ingemar Karlsson <po@ingk.se>"
 
 #: src/gmountman:270
 msgid "Name"
-msgstr "Nombre"
+msgstr "Namn"
 
 #: src/gmountman:272
 msgid "Device"
-msgstr "Dispositivo"
+msgstr "Enhet"
 
 #: src/gmountman:274
 msgid "Mount Point"
-msgstr "Punto de montaje"
+msgstr "Monteringspunkt"
 
 
