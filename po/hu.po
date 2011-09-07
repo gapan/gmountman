@@ -1,0 +1,81 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Laszlo Dvornik <rezuri@zoho.com>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: Salix\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-06-11 19:09+0300\n"
+"PO-Revision-Date: 2011-08-30 05:00+0000\n"
+"Last-Translator: dvornik <rezuri@zoho.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: hu\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+
+#: src/gmountman.glade:25 gmountman.desktop.in.h:2
+msgid "Mount Manager"
+msgstr "Csatoláskezelő"
+
+#: src/gmountman.glade:115
+msgid "Mount (m)"
+msgstr "Csatolás (m)"
+
+#: src/gmountman.glade:131
+msgid "Unmount (u)"
+msgstr "Leválasztás (u)"
+
+#: src/gmountman.glade:147
+msgid "Eject (e)"
+msgstr "Kiadás (e)"
+
+#: src/gmountman.glade:163
+msgid "Open (o)"
+msgstr "Megnyitás (o)"
+
+#: src/gmountman.glade:188
+msgid "Preferences (p)"
+msgstr "Beállítások (p)"
+
+#: src/gmountman.glade:273 gmountman.desktop.in.h:1
+msgid "A mount manager for local devices that uses gvfs"
+msgstr "Csatoláskezelő gvfs-t használó helyi eszközökhöz"
+
+#: src/gmountman.glade:951
+msgid "translator-credits"
+msgstr "Dvornik László <rezuri@zoho.com>"
+
+#: src/gmountman.glade:976
+msgid "Preferences"
+msgstr "Beállítások"
+
+#: src/gmountman.glade:1001
+msgid "<b>Open mounted devices with:</b>"
+msgstr "<b>Csatolt eszközök megnyitása ezzel:</b>"
+
+#: src/gmountman.glade:1010
+msgid "Default file manager (specified by XDG)"
+msgstr "Alapértelmezett fájlkezelő (XDG által megadott)"
+
+#: src/gmountman.glade:1028
+msgid "Custom file manager:"
+msgstr "Egyéni fájlkezelő:"
+
+#: src/gmountman:372
+msgid "Name"
+msgstr "Név"
+
+#: src/gmountman:374
+msgid "Device"
+msgstr "Eszköz"
+
+#: src/gmountman:376
+msgid "Mount Point"
+msgstr "Csatolási pont"
+
+
