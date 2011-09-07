@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Salix\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-09 16:59+0300\n"
-"PO-Revision-Date: 2011-06-12 01:05+0000\n"
-"Last-Translator: shador <futur.andy@googlemail.com>\n"
+"POT-Creation-Date: 2011-06-11 19:09+0300\n"
+"PO-Revision-Date: 2011-07-02 16:47+0000\n"
+"Last-Translator: Quax <>\n"
 "Language-Team: German (http://www.transifex.net/projects/p/salix/team/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,35 +21,59 @@ msgstr ""
 msgid "Mount Manager"
 msgstr "Datenträgerverwaltung"
 
-#: src/gmountman.glade:114
+#: src/gmountman.glade:115
 msgid "Mount (m)"
 msgstr "Einhängen (m)"
 
-#: src/gmountman.glade:129
+#: src/gmountman.glade:131
 msgid "Unmount (u)"
 msgstr "Aushängen (u)"
 
-#: src/gmountman.glade:144
+#: src/gmountman.glade:147
 msgid "Eject (e)"
 msgstr "Auswerfen (e)"
 
-#: src/gmountman.glade:229 gmountman.desktop.in.h:1
+#: src/gmountman.glade:163
+msgid "Open (o)"
+msgstr "Öffnen (o)"
+
+#: src/gmountman.glade:188
+msgid "Preferences (p)"
+msgstr "Einstellungen (p)"
+
+#: src/gmountman.glade:273 gmountman.desktop.in.h:1
 msgid "A mount manager for local devices that uses gvfs"
-msgstr "Datenträgerverwaltung für lokale Geräte, die gvfs benutzt"
+msgstr "GVFS-basierte Datenträgerverwaltung für lokale Geräte."
 
-#: src/gmountman.glade:907
+#: src/gmountman.glade:951
 msgid "translator-credits"
-msgstr "Andreas Born"
+msgstr "Manfred Müller aka Quax"
 
-#: src/gmountman:270
+#: src/gmountman.glade:976
+msgid "Preferences"
+msgstr "Einstellungen"
+
+#: src/gmountman.glade:1001
+msgid "<b>Open mounted devices with:</b>"
+msgstr "<b>Öffne eingehängte Geräte mit:</b>"
+
+#: src/gmountman.glade:1010
+msgid "Default file manager (specified by XDG)"
+msgstr "Standard-Dateimanager (festgelegt durch XDG)"
+
+#: src/gmountman.glade:1028
+msgid "Custom file manager:"
+msgstr "Eigener Datei-Manager:"
+
+#: src/gmountman:372
 msgid "Name"
 msgstr "Name"
 
-#: src/gmountman:272
+#: src/gmountman:374
 msgid "Device"
 msgstr "Gerät"
 
-#: src/gmountman:274
+#: src/gmountman:376
 msgid "Mount Point"
 msgstr "Einhängepunkt"
 

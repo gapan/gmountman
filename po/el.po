@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Salix\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-09 16:59+0300\n"
-"PO-Revision-Date: 2011-06-12 01:05+0000\n"
+"POT-Creation-Date: 2011-06-11 19:09+0300\n"
+"PO-Revision-Date: 2011-07-11 11:17+0000\n"
 "Last-Translator: gapan <vlahavas@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -21,35 +21,59 @@ msgstr ""
 msgid "Mount Manager"
 msgstr "Διαχειριστής Προσάρτησης Συσκευών"
 
-#: src/gmountman.glade:114
+#: src/gmountman.glade:115
 msgid "Mount (m)"
 msgstr "Προσάρτηση (m)"
 
-#: src/gmountman.glade:129
+#: src/gmountman.glade:131
 msgid "Unmount (u)"
 msgstr "Αποπροσάρτηση (u)"
 
-#: src/gmountman.glade:144
+#: src/gmountman.glade:147
 msgid "Eject (e)"
 msgstr "Εξαγωγή (e)"
 
-#: src/gmountman.glade:229 gmountman.desktop.in.h:1
+#: src/gmountman.glade:163
+msgid "Open (o)"
+msgstr "Άνοιγμα (o)"
+
+#: src/gmountman.glade:188
+msgid "Preferences (p)"
+msgstr "Προτιμήσεις (p)"
+
+#: src/gmountman.glade:273 gmountman.desktop.in.h:1
 msgid "A mount manager for local devices that uses gvfs"
 msgstr "Ένας διαχειριστής προσάρτησης τοπικών συσκεύων με τη χρήση του gvfs"
 
-#: src/gmountman.glade:907
+#: src/gmountman.glade:951
 msgid "translator-credits"
 msgstr "Γιώργος Βλαχάβας <vlahavas~at~gmail~dot~com>"
 
-#: src/gmountman:270
+#: src/gmountman.glade:976
+msgid "Preferences"
+msgstr "Προτιμήσεις"
+
+#: src/gmountman.glade:1001
+msgid "<b>Open mounted devices with:</b>"
+msgstr "<b>Άνοιγμα των προσαρτημένων συσκευών με:</b>"
+
+#: src/gmountman.glade:1010
+msgid "Default file manager (specified by XDG)"
+msgstr "Εξ ορισμού διαχειριστή αρχείων (όπως ορίζεται από το XDG)"
+
+#: src/gmountman.glade:1028
+msgid "Custom file manager:"
+msgstr "Άλλο διαχειριστή αρχείων:"
+
+#: src/gmountman:372
 msgid "Name"
 msgstr "Όνομα"
 
-#: src/gmountman:272
+#: src/gmountman:374
 msgid "Device"
 msgstr "Συσκευή"
 
-#: src/gmountman:274
+#: src/gmountman:376
 msgid "Mount Point"
 msgstr "Σημείο Προσάρτησης"
 

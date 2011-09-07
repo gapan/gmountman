@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Salix\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-09 16:59+0300\n"
-"PO-Revision-Date: 2011-06-12 01:05+0000\n"
+"POT-Creation-Date: 2011-06-11 19:09+0300\n"
+"PO-Revision-Date: 2011-07-01 15:18+0000\n"
 "Last-Translator: ingemar <ingemar@ingk.se>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -21,35 +21,59 @@ msgstr ""
 msgid "Mount Manager"
 msgstr "Monteringshanterare"
 
-#: src/gmountman.glade:114
+#: src/gmountman.glade:115
 msgid "Mount (m)"
 msgstr "Montera (m)"
 
-#: src/gmountman.glade:129
+#: src/gmountman.glade:131
 msgid "Unmount (u)"
 msgstr "Avmontera (u)"
 
-#: src/gmountman.glade:144
+#: src/gmountman.glade:147
 msgid "Eject (e)"
 msgstr "Mata ut (e)"
 
-#: src/gmountman.glade:229 gmountman.desktop.in.h:1
+#: src/gmountman.glade:163
+msgid "Open (o)"
+msgstr "Öppna (ö)"
+
+#: src/gmountman.glade:188
+msgid "Preferences (p)"
+msgstr "Inställningar (i)"
+
+#: src/gmountman.glade:273 gmountman.desktop.in.h:1
 msgid "A mount manager for local devices that uses gvfs"
 msgstr "En monteringshanterare för lokala enheter som använder gvfs"
 
-#: src/gmountman.glade:907
+#: src/gmountman.glade:951
 msgid "translator-credits"
 msgstr "Ingemar Karlsson <po@ingk.se>"
 
-#: src/gmountman:270
+#: src/gmountman.glade:976
+msgid "Preferences"
+msgstr "Inställningar"
+
+#: src/gmountman.glade:1001
+msgid "<b>Open mounted devices with:</b>"
+msgstr "<b>Öppna monterade enheter med:</b>"
+
+#: src/gmountman.glade:1010
+msgid "Default file manager (specified by XDG)"
+msgstr "Standard filhanterare (anges av XDG)"
+
+#: src/gmountman.glade:1028
+msgid "Custom file manager:"
+msgstr "Anpassad filhanterare:"
+
+#: src/gmountman:372
 msgid "Name"
 msgstr "Namn"
 
-#: src/gmountman:272
+#: src/gmountman:374
 msgid "Device"
 msgstr "Enhet"
 
-#: src/gmountman:274
+#: src/gmountman:376
 msgid "Mount Point"
 msgstr "Monteringspunkt"
 

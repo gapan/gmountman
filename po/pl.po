@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Salix\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-09 16:59+0300\n"
-"PO-Revision-Date: 2011-06-12 01:05+0000\n"
+"POT-Creation-Date: 2011-06-11 19:09+0300\n"
+"PO-Revision-Date: 2011-06-30 00:44+0000\n"
 "Last-Translator: gapan <vlahavas@gmail.com>\n"
 "Language-Team: Polish (http://www.transifex.net/projects/p/salix/team/pl/)\n"
 "MIME-Version: 1.0\n"
@@ -20,35 +20,59 @@ msgstr ""
 msgid "Mount Manager"
 msgstr ""
 
-#: src/gmountman.glade:114
+#: src/gmountman.glade:115
 msgid "Mount (m)"
 msgstr ""
 
-#: src/gmountman.glade:129
+#: src/gmountman.glade:131
 msgid "Unmount (u)"
 msgstr ""
 
-#: src/gmountman.glade:144
+#: src/gmountman.glade:147
 msgid "Eject (e)"
 msgstr ""
 
-#: src/gmountman.glade:229 gmountman.desktop.in.h:1
+#: src/gmountman.glade:163
+msgid "Open (o)"
+msgstr ""
+
+#: src/gmountman.glade:188
+msgid "Preferences (p)"
+msgstr ""
+
+#: src/gmountman.glade:273 gmountman.desktop.in.h:1
 msgid "A mount manager for local devices that uses gvfs"
 msgstr ""
 
-#: src/gmountman.glade:907
+#: src/gmountman.glade:951
 msgid "translator-credits"
 msgstr ""
 
-#: src/gmountman:270
+#: src/gmountman.glade:976
+msgid "Preferences"
+msgstr ""
+
+#: src/gmountman.glade:1001
+msgid "<b>Open mounted devices with:</b>"
+msgstr ""
+
+#: src/gmountman.glade:1010
+msgid "Default file manager (specified by XDG)"
+msgstr ""
+
+#: src/gmountman.glade:1028
+msgid "Custom file manager:"
+msgstr ""
+
+#: src/gmountman:372
 msgid "Name"
 msgstr ""
 
-#: src/gmountman:272
+#: src/gmountman:374
 msgid "Device"
 msgstr ""
 
-#: src/gmountman:274
+#: src/gmountman:376
 msgid "Mount Point"
 msgstr ""
 

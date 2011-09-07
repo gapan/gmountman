@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Salix\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-09 16:59+0300\n"
-"PO-Revision-Date: 2011-06-15 10:12+0000\n"
+"POT-Creation-Date: 2011-06-11 19:09+0300\n"
+"PO-Revision-Date: 2011-06-30 08:44+0000\n"
 "Last-Translator: knedlyk <yupadmin@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -21,35 +21,59 @@ msgstr ""
 msgid "Mount Manager"
 msgstr "Менеджер монтувань"
 
-#: src/gmountman.glade:114
+#: src/gmountman.glade:115
 msgid "Mount (m)"
 msgstr "Монтувати (m)"
 
-#: src/gmountman.glade:129
+#: src/gmountman.glade:131
 msgid "Unmount (u)"
 msgstr "Відмонтувати (u)"
 
-#: src/gmountman.glade:144
+#: src/gmountman.glade:147
 msgid "Eject (e)"
 msgstr "Витягнути (e)"
 
-#: src/gmountman.glade:229 gmountman.desktop.in.h:1
+#: src/gmountman.glade:163
+msgid "Open (o)"
+msgstr "Відкрити (о)"
+
+#: src/gmountman.glade:188
+msgid "Preferences (p)"
+msgstr "Уподобання (p)"
+
+#: src/gmountman.glade:273 gmountman.desktop.in.h:1
 msgid "A mount manager for local devices that uses gvfs"
 msgstr "Менеджер монтувань для локальних пристроїв, що використовують gvfs"
 
-#: src/gmountman.glade:907
+#: src/gmountman.glade:951
 msgid "translator-credits"
 msgstr "Yarema aka knedlyk <yupadmin@gmail.com>"
 
-#: src/gmountman:270
+#: src/gmountman.glade:976
+msgid "Preferences"
+msgstr "Уподобання"
+
+#: src/gmountman.glade:1001
+msgid "<b>Open mounted devices with:</b>"
+msgstr "<b>Відкрити змонтовані пристрої з:</b>"
+
+#: src/gmountman.glade:1010
+msgid "Default file manager (specified by XDG)"
+msgstr "Менеджер файлів по замовчуванню (визначений через XDG)"
+
+#: src/gmountman.glade:1028
+msgid "Custom file manager:"
+msgstr "Менеджер файлів визначений користувачем:"
+
+#: src/gmountman:372
 msgid "Name"
 msgstr "Назва"
 
-#: src/gmountman:272
+#: src/gmountman:374
 msgid "Device"
 msgstr "Пристрій"
 
-#: src/gmountman:274
+#: src/gmountman:376
 msgid "Mount Point"
 msgstr "Точка монтування"
 
