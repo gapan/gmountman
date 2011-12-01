@@ -2,13 +2,15 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # 
+# Translators:
+#   <sgasior1@gmail.com>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: Salix\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-06-11 19:09+0300\n"
-"PO-Revision-Date: 2011-06-30 00:44+0000\n"
-"Last-Translator: gapan <vlahavas@gmail.com>\n"
+"PO-Revision-Date: 2011-11-07 20:48+0000\n"
+"Last-Translator: ink3 <sgasior1@gmail.com>\n"
 "Language-Team: Polish (http://www.transifex.net/projects/p/salix/team/pl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,62 +20,62 @@ msgstr ""
 
 #: src/gmountman.glade:25 gmountman.desktop.in.h:2
 msgid "Mount Manager"
-msgstr ""
+msgstr "Menadżer montowania"
 
 #: src/gmountman.glade:115
 msgid "Mount (m)"
-msgstr ""
+msgstr "Zamontuj (m)"
 
 #: src/gmountman.glade:131
 msgid "Unmount (u)"
-msgstr ""
+msgstr "Odmontuj (u)"
 
 #: src/gmountman.glade:147
 msgid "Eject (e)"
-msgstr ""
+msgstr "Wysuń (e)"
 
 #: src/gmountman.glade:163
 msgid "Open (o)"
-msgstr ""
+msgstr "Open (o)"
 
 #: src/gmountman.glade:188
 msgid "Preferences (p)"
-msgstr ""
+msgstr "Preferencje (p)"
 
 #: src/gmountman.glade:273 gmountman.desktop.in.h:1
 msgid "A mount manager for local devices that uses gvfs"
-msgstr ""
+msgstr "Menadżer montowania dla lokalnych urządzeń używa gvfs"
 
 #: src/gmountman.glade:951
 msgid "translator-credits"
-msgstr ""
+msgstr "tłumacz-"
 
 #: src/gmountman.glade:976
 msgid "Preferences"
-msgstr ""
+msgstr "Preferencje"
 
 #: src/gmountman.glade:1001
 msgid "<b>Open mounted devices with:</b>"
-msgstr ""
+msgstr "<b>Otwórz zamontowane urządzenie z:</b>"
 
 #: src/gmountman.glade:1010
 msgid "Default file manager (specified by XDG)"
-msgstr ""
+msgstr "Domyślny menadżer plików (określony przez XDG)"
 
 #: src/gmountman.glade:1028
 msgid "Custom file manager:"
-msgstr ""
+msgstr "Własny menadżer plików:"
 
 #: src/gmountman:372
 msgid "Name"
-msgstr ""
+msgstr "Nazwa"
 
 #: src/gmountman:374
 msgid "Device"
-msgstr ""
+msgstr "Urządzenie"
 
 #: src/gmountman:376
 msgid "Mount Point"
-msgstr ""
+msgstr "Punkt montowania"
 
 

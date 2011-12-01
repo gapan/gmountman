@@ -2,13 +2,14 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # 
+# Translators:
 #   <hydrangea_and_snail@hotmail.com>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: Salix\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-06-11 19:09+0300\n"
-"PO-Revision-Date: 2011-06-30 00:44+0000\n"
+"PO-Revision-Date: 2011-10-19 17:24+0000\n"
 "Last-Translator: tsuren <hydrangea_and_snail@hotmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -35,11 +36,11 @@ msgstr "イジェクト（e）"
 
 #: src/gmountman.glade:163
 msgid "Open (o)"
-msgstr ""
+msgstr "オープン（o）"
 
 #: src/gmountman.glade:188
 msgid "Preferences (p)"
-msgstr ""
+msgstr "環境設定（p）"
 
 #: src/gmountman.glade:273 gmountman.desktop.in.h:1
 msgid "A mount manager for local devices that uses gvfs"
@@ -51,19 +52,19 @@ msgstr "翻訳者のクレジット"
 
 #: src/gmountman.glade:976
 msgid "Preferences"
-msgstr ""
+msgstr "環境設定"
 
 #: src/gmountman.glade:1001
 msgid "<b>Open mounted devices with:</b>"
-msgstr ""
+msgstr "<b>マウントされたデバイスを開きます:</b>"
 
 #: src/gmountman.glade:1010
 msgid "Default file manager (specified by XDG)"
-msgstr ""
+msgstr "デフォルト·ファイルマネージャ（XDGで指定されている）"
 
 #: src/gmountman.glade:1028
 msgid "Custom file manager:"
-msgstr ""
+msgstr "カスタム·ファイルマネージャ："
 
 #: src/gmountman:372
 msgid "Name"

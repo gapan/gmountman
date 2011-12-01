@@ -2,13 +2,15 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # 
+# Translators:
 #   <alexd@garrit.freeserve.co.uk>, 2011.
+#   <vlahavas@gmail.com>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: Salix\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-06-11 19:09+0300\n"
-"PO-Revision-Date: 2011-06-30 00:44+0000\n"
+"PO-Revision-Date: 2011-11-03 23:52+0000\n"
 "Last-Translator: Garratrans112 <alexd@garrit.freeserve.co.uk>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -23,23 +25,23 @@ msgstr "Manaidsear Cuir-na-àirde"
 
 #: src/gmountman.glade:115
 msgid "Mount (m)"
-msgstr "Cuir-na-àirde (à)"
+msgstr "Cuir-na-àirde (m)"
 
 #: src/gmountman.glade:131
 msgid "Unmount (u)"
-msgstr "Thoir sios (s)"
+msgstr "Thoir sios (u)"
 
 #: src/gmountman.glade:147
 msgid "Eject (e)"
-msgstr "Tilg a-mach (t)"
+msgstr "Tilg a-mach (e)"
 
 #: src/gmountman.glade:163
 msgid "Open (o)"
-msgstr ""
+msgstr "Fosgail (f)"
 
 #: src/gmountman.glade:188
 msgid "Preferences (p)"
-msgstr ""
+msgstr "Roghainnean (r)"
 
 #: src/gmountman.glade:273 gmountman.desktop.in.h:1
 msgid "A mount manager for local devices that uses gvfs"
@@ -51,19 +53,19 @@ msgstr "cliù "
 
 #: src/gmountman.glade:976
 msgid "Preferences"
-msgstr ""
+msgstr "Roghainnean"
 
 #: src/gmountman.glade:1001
 msgid "<b>Open mounted devices with:</b>"
-msgstr ""
+msgstr "<b>Fosgail innleachdan dh' àrdachadh le :</b>"
 
 #: src/gmountman.glade:1010
 msgid "Default file manager (specified by XDG)"
-msgstr ""
+msgstr "Manaidear faidhle gnàthach (sònrachadh le XDG)"
 
 #: src/gmountman.glade:1028
 msgid "Custom file manager:"
-msgstr ""
+msgstr "Manaidear faidhle gnàthach:"
 
 #: src/gmountman:372
 msgid "Name"

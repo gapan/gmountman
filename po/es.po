@@ -2,14 +2,15 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # 
+# Translators:
 #   <seacat.linux@gmail.com>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: Salix\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-06-11 19:09+0300\n"
-"PO-Revision-Date: 2011-06-30 00:44+0000\n"
-"Last-Translator: gapan <vlahavas@gmail.com>\n"
+"PO-Revision-Date: 2011-10-17 03:22+0000\n"
+"Last-Translator: seacat <seacat.linux@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -35,11 +36,11 @@ msgstr "Expulsar (e)"
 
 #: src/gmountman.glade:163
 msgid "Open (o)"
-msgstr ""
+msgstr "Abrir (o)"
 
 #: src/gmountman.glade:188
 msgid "Preferences (p)"
-msgstr ""
+msgstr "Preferencias (p)"
 
 #: src/gmountman.glade:273 gmountman.desktop.in.h:1
 msgid "A mount manager for local devices that uses gvfs"
@@ -52,19 +53,19 @@ msgstr "Fernando Velo"
 
 #: src/gmountman.glade:976
 msgid "Preferences"
-msgstr ""
+msgstr "Preferencias"
 
 #: src/gmountman.glade:1001
 msgid "<b>Open mounted devices with:</b>"
-msgstr ""
+msgstr "<b>Abrir los dispositivos montados con:</b>"
 
 #: src/gmountman.glade:1010
 msgid "Default file manager (specified by XDG)"
-msgstr ""
+msgstr "Administrador de archivos predeterminado (especificado por XDG)"
 
 #: src/gmountman.glade:1028
 msgid "Custom file manager:"
-msgstr ""
+msgstr "Administrador de archivos personalizado:"
 
 #: src/gmountman:372
 msgid "Name"
