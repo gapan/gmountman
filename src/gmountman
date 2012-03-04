@@ -169,9 +169,37 @@ class GMountMan:
 			except TypeError:
 				pass
 
+	# the row_activated signal is emitted when double clicking or
+	# pressing enter on a treeview item
+	def on_treeview_devices_row_activated(self, widget, path, column):
+		selectedline = self.treeview_devices.get_selection()
+		self.liststore_devices, iter = selectedline.get_selected()
+		device = self.liststore_devices.get_value(iter, 2)
+		mountpoint = self.liststore_devices.get_value(iter, 3)
+		# iter will probably never be None in this case, since
+		# we're double-clicking or pressing enter first anyway,
+		# but we're checking just in case
+		if iter is not None:
+			if self.liststore_devices.get_value(iter, 3) is None:
+				can_mount = self.liststore_devices.get_value(iter, 4)
+			else:
+				can_mount = False
+			can_unmount = self.liststore_devices.get_value(iter, 5)
+		else:
+			can_mount = False
+			can_unmount = False
+		# if device can be mounted, it means it's not mounted
+		# yet, so it should be mounted now
+		if can_mount:
+			self.mount_device(device)
+		# if device can be unmounted, it means it's mounted, so
+		# it will be opened
+		if can_unmount:
+			self.open_mountpoint(mountpoint)
+
 	def on_treeview_devices_cursor_changed(self, widget):
 		selectedline = self.treeview_devices.get_selection()
-		self.lisstore_devices, iter = selectedline.get_selected()
+		self.liststore_devices, iter = selectedline.get_selected()
 		if iter is not None:
 			if self.liststore_devices.get_value(iter, 3) is None:
 				can_mount = self.liststore_devices.get_value(iter, 4)

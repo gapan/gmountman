@@ -54,6 +54,7 @@
                     <property name="headers_clickable">False</property>
                     <property name="enable_search">False</property>
                     <signal name="cursor_changed" handler="on_treeview_devices_cursor_changed"/>
+                    <signal name="row_activated" handler="on_treeview_devices_row_activated"/>
                     <child>
                       <object class="GtkTreeViewColumn" id="treeviewcolumn_icon">
                         <property name="title">icon</property>
