@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Salix\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-06-11 19:09+0300\n"
-"PO-Revision-Date: 2011-10-19 17:24+0000\n"
+"PO-Revision-Date: 2012-02-14 13:42+0000\n"
 "Last-Translator: tsuren <hydrangea_and_snail@hotmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -77,5 +77,3 @@ msgstr "デバイス"
 #: src/gmountman:376
 msgid "Mount Point"
 msgstr "マウントポイント"
-
-

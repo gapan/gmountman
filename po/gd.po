@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Salix\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-06-11 19:09+0300\n"
-"PO-Revision-Date: 2011-11-03 23:52+0000\n"
+"PO-Revision-Date: 2012-02-14 13:42+0000\n"
 "Last-Translator: Garratrans112 <alexd@garrit.freeserve.co.uk>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -78,5 +78,3 @@ msgstr "Innleachd"
 #: src/gmountman:376
 msgid "Mount Point"
 msgstr "Ìre Cuir-na -àirde"
-
-
