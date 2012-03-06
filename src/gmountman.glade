@@ -29,7 +29,7 @@
     <signal name="destroy" handler="gtk_main_quit"/>
     <signal name="key_release_event" handler="on_key_release_event"/>
     <signal name="configure_event" handler="on_gmountman_configure_event"/>
-    <signal name="delete_event" handler="gtk_main_quit"/>
+    <signal name="delete_event" handler="on_gmountman_delete_event"/>
     <child internal-child="vbox">
       <object class="GtkVBox" id="dialog-vbox1">
         <property name="visible">True</property>
@@ -237,7 +237,7 @@
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
                 <property name="use_stock">True</property>
-                <signal name="clicked" handler="gtk_main_quit"/>
+                <signal name="clicked" handler="on_button_close_clicked"/>
               </object>
               <packing>
                 <property name="expand">False</property>
