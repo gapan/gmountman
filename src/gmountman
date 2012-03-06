@@ -441,13 +441,13 @@ class GMountMan:
 			new_menuitem.set_image(img)
 			new_menuitem.set_submenu(submenu)
 			if can_unmount:
+				open_menuitem = gtk.ImageMenuItem(gtk.STOCK_OPEN)
+				open_menuitem.connect("activate", self.trayopen, mountpoint)
 				unmount_menuitem = gtk.ImageMenuItem(gtk.STOCK_REMOVE)
 				unmount_menuitem.set_label(_('Unmount'))
 				unmount_menuitem.connect("activate", self.trayunmount, node)
-				open_menuitem = gtk.ImageMenuItem(gtk.STOCK_OPEN)
-				open_menuitem.connect("activate", self.trayopen, mountpoint)
-				submenu.append(unmount_menuitem)
 				submenu.append(open_menuitem)
+				submenu.append(unmount_menuitem)
 			else:
 				if can_mount:
 					mount_menuitem = gtk.ImageMenuItem(gtk.STOCK_ADD)
