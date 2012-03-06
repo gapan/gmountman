@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Salix\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-06 13:45+0200\n"
+"POT-Creation-Date: 2012-03-06 13:58+0200\n"
 "PO-Revision-Date: 2012-03-06 13:50+0200\n"
 "Last-Translator: George Vlahavas <vlahavas~at~gmail~dot~com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,44 +19,37 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
-#: src/gmountman.glade:25
-#: gmountman.desktop.in.h:2
+#: src/gmountman.glade:25 gmountman.desktop.in.h:2
 msgid "Mount Manager"
 msgstr "Monteringshanterare"
 
-#: src/gmountman.glade:116
-msgid "Mount (m)"
-msgstr "Montera (m)"
+#: src/gmountman.glade:116 src/gmountman:454 src/gmountman:508
+msgid "Mount"
+msgstr "Montera"
 
-#: src/gmountman.glade:132
-msgid "Unmount (u)"
-msgstr "Avmontera (u)"
+#: src/gmountman.glade:132 src/gmountman:447 src/gmountman:510
+msgid "Unmount"
+msgstr "Avmontera"
 
-#: src/gmountman.glade:148
-msgid "Eject (e)"
-msgstr "Mata ut (e)"
+#: src/gmountman.glade:148 src/gmountman:458 src/gmountman:512
+msgid "Eject"
+msgstr "Mata ut"
 
-#: src/gmountman.glade:164
-msgid "Open (o)"
-msgstr "Öppna (o)"
+#: src/gmountman.glade:164 src/gmountman:514
+msgid "Open"
+msgstr "Öppna"
 
-#: src/gmountman.glade:189
-msgid "Preferences (p)"
-msgstr "Inställningar (p)"
+#: src/gmountman.glade:189 src/gmountman.glade:977 src/gmountman:516
+msgid "Preferences"
+msgstr "Inställningar"
 
-#: src/gmountman.glade:274
-#: gmountman.desktop.in.h:1
+#: src/gmountman.glade:274 gmountman.desktop.in.h:1
 msgid "A mount manager for local devices that uses gvfs"
 msgstr "En monteringshanterare för lokala enheter som använder gvfs"
 
 #: src/gmountman.glade:952
 msgid "translator-credits"
 msgstr "Ingemar Karlsson <po@ingk.se>"
-
-#: src/gmountman.glade:977
-#: src/gmountman:516
-msgid "Preferences"
-msgstr "Inställningar"
 
 #: src/gmountman.glade:1002
 msgid "<b>Open mounted devices with:</b>"
@@ -70,21 +63,6 @@ msgstr "Standard filhanterare (anges av XDG)"
 msgid "Custom file manager:"
 msgstr "Anpassad filhanterare:"
 
-#: src/gmountman:447
-#: src/gmountman:510
-msgid "Unmount"
-msgstr "Avmontera"
-
-#: src/gmountman:454
-#: src/gmountman:508
-msgid "Mount"
-msgstr "Montera"
-
-#: src/gmountman:458
-#: src/gmountman:512
-msgid "Eject"
-msgstr "Mata ut"
-
 #: src/gmountman:467
 msgid "Hide"
 msgstr ""
@@ -92,10 +70,6 @@ msgstr ""
 #: src/gmountman:469
 msgid "Show"
 msgstr ""
-
-#: src/gmountman:514
-msgid "Open"
-msgstr "Öppna"
 
 #: src/gmountman:523
 msgid "Name"
@@ -109,3 +83,17 @@ msgstr "Enhet"
 msgid "Mount Point"
 msgstr "Monteringspunkt"
 
+#~ msgid "Mount (m)"
+#~ msgstr "Montera (m)"
+
+#~ msgid "Unmount (u)"
+#~ msgstr "Avmontera (u)"
+
+#~ msgid "Eject (e)"
+#~ msgstr "Mata ut (e)"
+
+#~ msgid "Open (o)"
+#~ msgstr "Öppna (o)"
+
+#~ msgid "Preferences (p)"
+#~ msgstr "Inställningar (p)"

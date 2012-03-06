@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-06 13:45+0200\n"
+"POT-Creation-Date: 2012-03-06 13:58+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,24 +21,24 @@ msgstr ""
 msgid "Mount Manager"
 msgstr ""
 
-#: src/gmountman.glade:116
-msgid "Mount (m)"
+#: src/gmountman.glade:116 src/gmountman:454 src/gmountman:508
+msgid "Mount"
 msgstr ""
 
-#: src/gmountman.glade:132
-msgid "Unmount (u)"
+#: src/gmountman.glade:132 src/gmountman:447 src/gmountman:510
+msgid "Unmount"
 msgstr ""
 
-#: src/gmountman.glade:148
-msgid "Eject (e)"
+#: src/gmountman.glade:148 src/gmountman:458 src/gmountman:512
+msgid "Eject"
 msgstr ""
 
-#: src/gmountman.glade:164
-msgid "Open (o)"
+#: src/gmountman.glade:164 src/gmountman:514
+msgid "Open"
 msgstr ""
 
-#: src/gmountman.glade:189
-msgid "Preferences (p)"
+#: src/gmountman.glade:189 src/gmountman.glade:977 src/gmountman:516
+msgid "Preferences"
 msgstr ""
 
 #: src/gmountman.glade:274 gmountman.desktop.in.h:1
@@ -47,10 +47,6 @@ msgstr ""
 
 #: src/gmountman.glade:952
 msgid "translator-credits"
-msgstr ""
-
-#: src/gmountman.glade:977 src/gmountman:516
-msgid "Preferences"
 msgstr ""
 
 #: src/gmountman.glade:1002
@@ -65,28 +61,12 @@ msgstr ""
 msgid "Custom file manager:"
 msgstr ""
 
-#: src/gmountman:447 src/gmountman:510
-msgid "Unmount"
-msgstr ""
-
-#: src/gmountman:454 src/gmountman:508
-msgid "Mount"
-msgstr ""
-
-#: src/gmountman:458 src/gmountman:512
-msgid "Eject"
-msgstr ""
-
 #: src/gmountman:467
 msgid "Hide"
 msgstr ""
 
 #: src/gmountman:469
 msgid "Show"
-msgstr ""
-
-#: src/gmountman:514
-msgid "Open"
 msgstr ""
 
 #: src/gmountman:523

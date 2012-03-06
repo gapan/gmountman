@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Salix\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-06 13:45+0200\n"
+"POT-Creation-Date: 2012-03-06 13:58+0200\n"
 "PO-Revision-Date: 2012-03-06 13:48+0200\n"
 "Last-Translator: George Vlahavas <vlahavas~at~gmail~dot~com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,44 +19,37 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n < 2 ? 0 : n == 2 ? 1 : 2\n"
 
-#: src/gmountman.glade:25
-#: gmountman.desktop.in.h:2
+#: src/gmountman.glade:25 gmountman.desktop.in.h:2
 msgid "Mount Manager"
 msgstr "Manaidsear Cuir-na-àirde"
 
-#: src/gmountman.glade:116
-msgid "Mount (m)"
-msgstr "Cuir-na-àirde (m)"
+#: src/gmountman.glade:116 src/gmountman:454 src/gmountman:508
+msgid "Mount"
+msgstr "Cuir-na-àirde"
 
-#: src/gmountman.glade:132
-msgid "Unmount (u)"
-msgstr "Thoir sios (u)"
+#: src/gmountman.glade:132 src/gmountman:447 src/gmountman:510
+msgid "Unmount"
+msgstr "Thoir sios"
 
-#: src/gmountman.glade:148
-msgid "Eject (e)"
-msgstr "Tilg a-mach (e)"
+#: src/gmountman.glade:148 src/gmountman:458 src/gmountman:512
+msgid "Eject"
+msgstr "Tilg a-mach"
 
-#: src/gmountman.glade:164
-msgid "Open (o)"
-msgstr "Fosgail (f)"
+#: src/gmountman.glade:164 src/gmountman:514
+msgid "Open"
+msgstr "Fosgail"
 
-#: src/gmountman.glade:189
-msgid "Preferences (p)"
-msgstr "Roghainnean (r)"
+#: src/gmountman.glade:189 src/gmountman.glade:977 src/gmountman:516
+msgid "Preferences"
+msgstr "Roghainnean"
 
-#: src/gmountman.glade:274
-#: gmountman.desktop.in.h:1
+#: src/gmountman.glade:274 gmountman.desktop.in.h:1
 msgid "A mount manager for local devices that uses gvfs"
 msgstr "Manaidsear Cuir-na-àirde son innleachd ionadail cleachdadh gvfs"
 
 #: src/gmountman.glade:952
 msgid "translator-credits"
 msgstr "cliù "
-
-#: src/gmountman.glade:977
-#: src/gmountman:516
-msgid "Preferences"
-msgstr "Roghainnean"
 
 #: src/gmountman.glade:1002
 msgid "<b>Open mounted devices with:</b>"
@@ -70,21 +63,6 @@ msgstr "Manaidear faidhle gnàthach (sònrachadh le XDG)"
 msgid "Custom file manager:"
 msgstr "Manaidear faidhle gnàthach:"
 
-#: src/gmountman:447
-#: src/gmountman:510
-msgid "Unmount"
-msgstr "Thoir sios"
-
-#: src/gmountman:454
-#: src/gmountman:508
-msgid "Mount"
-msgstr "Cuir-na-àirde"
-
-#: src/gmountman:458
-#: src/gmountman:512
-msgid "Eject"
-msgstr "Tilg a-mach"
-
 #: src/gmountman:467
 msgid "Hide"
 msgstr ""
@@ -92,10 +70,6 @@ msgstr ""
 #: src/gmountman:469
 msgid "Show"
 msgstr ""
-
-#: src/gmountman:514
-msgid "Open"
-msgstr "Fosgail"
 
 #: src/gmountman:523
 msgid "Name"
@@ -109,3 +83,17 @@ msgstr "Innleachd"
 msgid "Mount Point"
 msgstr "Ìre Cuir-na -àirde"
 
+#~ msgid "Mount (m)"
+#~ msgstr "Cuir-na-àirde (m)"
+
+#~ msgid "Unmount (u)"
+#~ msgstr "Thoir sios (u)"
+
+#~ msgid "Eject (e)"
+#~ msgstr "Tilg a-mach (e)"
+
+#~ msgid "Open (o)"
+#~ msgstr "Fosgail (f)"
+
+#~ msgid "Preferences (p)"
+#~ msgstr "Roghainnean (r)"

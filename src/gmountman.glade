@@ -113,7 +113,7 @@
                 <property name="spacing">10</property>
                 <child>
                   <object class="GtkButton" id="button_mount">
-                    <property name="label" translatable="yes">Mount (m)</property>
+                    <property name="label" translatable="yes">Mount</property>
                     <property name="visible">True</property>
                     <property name="sensitive">False</property>
                     <property name="can_focus">True</property>
@@ -129,7 +129,7 @@
                 </child>
                 <child>
                   <object class="GtkButton" id="button_umount">
-                    <property name="label" translatable="yes">Unmount (u)</property>
+                    <property name="label" translatable="yes">Unmount</property>
                     <property name="visible">True</property>
                     <property name="sensitive">False</property>
                     <property name="can_focus">True</property>
@@ -145,7 +145,7 @@
                 </child>
                 <child>
                   <object class="GtkButton" id="button_eject">
-                    <property name="label" translatable="yes">Eject (e)</property>
+                    <property name="label" translatable="yes">Eject</property>
                     <property name="visible">True</property>
                     <property name="sensitive">False</property>
                     <property name="can_focus">True</property>
@@ -161,7 +161,7 @@
                 </child>
                 <child>
                   <object class="GtkButton" id="button_open">
-                    <property name="label" translatable="yes">Open (o)</property>
+                    <property name="label" translatable="yes">Open</property>
                     <property name="visible">True</property>
                     <property name="sensitive">False</property>
                     <property name="can_focus">True</property>
@@ -186,7 +186,7 @@
                 </child>
                 <child>
                   <object class="GtkButton" id="button_prefs">
-                    <property name="label" translatable="yes">Preferences (p)</property>
+                    <property name="label" translatable="yes">Preferences</property>
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>

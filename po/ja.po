@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Salix\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-06 13:45+0200\n"
+"POT-Creation-Date: 2012-03-06 13:58+0200\n"
 "PO-Revision-Date: 2012-03-06 13:49+0200\n"
 "Last-Translator: George Vlahavas <vlahavas~at~gmail~dot~com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,44 +18,37 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0\n"
 
-#: src/gmountman.glade:25
-#: gmountman.desktop.in.h:2
+#: src/gmountman.glade:25 gmountman.desktop.in.h:2
 msgid "Mount Manager"
 msgstr "マウントマネージャ-"
 
-#: src/gmountman.glade:116
-msgid "Mount (m)"
-msgstr "マウント（m）"
+#: src/gmountman.glade:116 src/gmountman:454 src/gmountman:508
+msgid "Mount"
+msgstr "マウント"
 
-#: src/gmountman.glade:132
-msgid "Unmount (u)"
-msgstr "マウントを解除（u)"
+#: src/gmountman.glade:132 src/gmountman:447 src/gmountman:510
+msgid "Unmount"
+msgstr "マウントを解除"
 
-#: src/gmountman.glade:148
-msgid "Eject (e)"
-msgstr "イジェクト（e）"
+#: src/gmountman.glade:148 src/gmountman:458 src/gmountman:512
+msgid "Eject"
+msgstr "イジェクト"
 
-#: src/gmountman.glade:164
-msgid "Open (o)"
-msgstr "オープン（o）"
+#: src/gmountman.glade:164 src/gmountman:514
+msgid "Open"
+msgstr "オープン"
 
-#: src/gmountman.glade:189
-msgid "Preferences (p)"
-msgstr "環境設定（p）"
+#: src/gmountman.glade:189 src/gmountman.glade:977 src/gmountman:516
+msgid "Preferences"
+msgstr "環境設定"
 
-#: src/gmountman.glade:274
-#: gmountman.desktop.in.h:1
+#: src/gmountman.glade:274 gmountman.desktop.in.h:1
 msgid "A mount manager for local devices that uses gvfs"
 msgstr "ローカルデバイスをgvfsを使用してマウントするマネージャー"
 
 #: src/gmountman.glade:952
 msgid "translator-credits"
 msgstr "翻訳者のクレジット"
-
-#: src/gmountman.glade:977
-#: src/gmountman:516
-msgid "Preferences"
-msgstr "環境設定"
 
 #: src/gmountman.glade:1002
 msgid "<b>Open mounted devices with:</b>"
@@ -69,21 +62,6 @@ msgstr "デフォルト·ファイルマネージャ（XDGで指定されてい�
 msgid "Custom file manager:"
 msgstr "カスタム·ファイルマネージャ："
 
-#: src/gmountman:447
-#: src/gmountman:510
-msgid "Unmount"
-msgstr "マウントを解除"
-
-#: src/gmountman:454
-#: src/gmountman:508
-msgid "Mount"
-msgstr "マウント"
-
-#: src/gmountman:458
-#: src/gmountman:512
-msgid "Eject"
-msgstr "イジェクト"
-
 #: src/gmountman:467
 msgid "Hide"
 msgstr ""
@@ -91,10 +69,6 @@ msgstr ""
 #: src/gmountman:469
 msgid "Show"
 msgstr ""
-
-#: src/gmountman:514
-msgid "Open"
-msgstr "オープン"
 
 #: src/gmountman:523
 msgid "Name"
@@ -108,3 +82,17 @@ msgstr "デバイス"
 msgid "Mount Point"
 msgstr "マウントポイント"
 
+#~ msgid "Mount (m)"
+#~ msgstr "マウント（m）"
+
+#~ msgid "Unmount (u)"
+#~ msgstr "マウントを解除（u)"
+
+#~ msgid "Eject (e)"
+#~ msgstr "イジェクト（e）"
+
+#~ msgid "Open (o)"
+#~ msgstr "オープン（o）"
+
+#~ msgid "Preferences (p)"
+#~ msgstr "環境設定（p）"
