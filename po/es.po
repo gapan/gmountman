@@ -1,79 +1,110 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 #   <seacat.linux@gmail.com>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: Salix\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-11 19:09+0300\n"
-"PO-Revision-Date: 2012-02-14 13:42+0000\n"
-"Last-Translator: seacat <seacat.linux@gmail.com>\n"
+"POT-Creation-Date: 2012-03-06 13:45+0200\n"
+"PO-Revision-Date: 2012-03-06 13:47+0200\n"
+"Last-Translator: George Vlahavas <vlahavas~at~gmail~dot~com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: es\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
-#: src/gmountman.glade:25 gmountman.desktop.in.h:2
+#: src/gmountman.glade:25
+#: gmountman.desktop.in.h:2
 msgid "Mount Manager"
 msgstr "Administrador de Montaje"
 
-#: src/gmountman.glade:115
+#: src/gmountman.glade:116
 msgid "Mount (m)"
 msgstr "Montar (m)"
 
-#: src/gmountman.glade:131
+#: src/gmountman.glade:132
 msgid "Unmount (u)"
 msgstr "Desmontar (u)"
 
-#: src/gmountman.glade:147
+#: src/gmountman.glade:148
 msgid "Eject (e)"
 msgstr "Expulsar (e)"
 
-#: src/gmountman.glade:163
+#: src/gmountman.glade:164
 msgid "Open (o)"
 msgstr "Abrir (o)"
 
-#: src/gmountman.glade:188
+#: src/gmountman.glade:189
 msgid "Preferences (p)"
 msgstr "Preferencias (p)"
 
-#: src/gmountman.glade:273 gmountman.desktop.in.h:1
+#: src/gmountman.glade:274
+#: gmountman.desktop.in.h:1
 msgid "A mount manager for local devices that uses gvfs"
 msgstr "Un administrador de montaje para dispositivos locales que utiliza gvfs"
 
-#: src/gmountman.glade:951
+#: src/gmountman.glade:952
 msgid "translator-credits"
 msgstr "Fernando Velo"
 
-#: src/gmountman.glade:976
+#: src/gmountman.glade:977
+#: src/gmountman:516
 msgid "Preferences"
 msgstr "Preferencias"
 
-#: src/gmountman.glade:1001
+#: src/gmountman.glade:1002
 msgid "<b>Open mounted devices with:</b>"
 msgstr "<b>Abrir los dispositivos montados con:</b>"
 
-#: src/gmountman.glade:1010
+#: src/gmountman.glade:1011
 msgid "Default file manager (specified by XDG)"
 msgstr "Administrador de archivos predeterminado (especificado por XDG)"
 
-#: src/gmountman.glade:1028
+#: src/gmountman.glade:1029
 msgid "Custom file manager:"
 msgstr "Administrador de archivos personalizado:"
 
-#: src/gmountman:372
+#: src/gmountman:447
+#: src/gmountman:510
+msgid "Unmount"
+msgstr "Desmontar"
+
+#: src/gmountman:454
+#: src/gmountman:508
+msgid "Mount"
+msgstr "Montar"
+
+#: src/gmountman:458
+#: src/gmountman:512
+msgid "Eject"
+msgstr "Expulsar"
+
+#: src/gmountman:467
+msgid "Hide"
+msgstr ""
+
+#: src/gmountman:469
+msgid "Show"
+msgstr ""
+
+#: src/gmountman:514
+msgid "Open"
+msgstr "Abrir"
+
+#: src/gmountman:523
 msgid "Name"
 msgstr "Nombre"
 
-#: src/gmountman:374
+#: src/gmountman:525
 msgid "Device"
 msgstr "Dispositivo"
 
-#: src/gmountman:376
+#: src/gmountman:527
 msgid "Mount Point"
 msgstr "Punto de montaje"
+

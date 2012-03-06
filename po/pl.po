@@ -1,79 +1,110 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 #   <sgasior1@gmail.com>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: Salix\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-11 19:09+0300\n"
-"PO-Revision-Date: 2012-02-14 13:42+0000\n"
-"Last-Translator: ink3 <sgasior1@gmail.com>\n"
+"POT-Creation-Date: 2012-03-06 13:45+0200\n"
+"PO-Revision-Date: 2012-03-06 13:49+0200\n"
+"Last-Translator: George Vlahavas <vlahavas~at~gmail~dot~com>\n"
 "Language-Team: Polish (http://www.transifex.net/projects/p/salix/language/pl/)\n"
+"Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: pl\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
-#: src/gmountman.glade:25 gmountman.desktop.in.h:2
+#: src/gmountman.glade:25
+#: gmountman.desktop.in.h:2
 msgid "Mount Manager"
 msgstr "Menadżer montowania"
 
-#: src/gmountman.glade:115
+#: src/gmountman.glade:116
 msgid "Mount (m)"
 msgstr "Zamontuj (m)"
 
-#: src/gmountman.glade:131
+#: src/gmountman.glade:132
 msgid "Unmount (u)"
 msgstr "Odmontuj (u)"
 
-#: src/gmountman.glade:147
+#: src/gmountman.glade:148
 msgid "Eject (e)"
 msgstr "Wysuń (e)"
 
-#: src/gmountman.glade:163
+#: src/gmountman.glade:164
 msgid "Open (o)"
 msgstr "Open (o)"
 
-#: src/gmountman.glade:188
+#: src/gmountman.glade:189
 msgid "Preferences (p)"
 msgstr "Preferencje (p)"
 
-#: src/gmountman.glade:273 gmountman.desktop.in.h:1
+#: src/gmountman.glade:274
+#: gmountman.desktop.in.h:1
 msgid "A mount manager for local devices that uses gvfs"
 msgstr "Menadżer montowania dla lokalnych urządzeń używa gvfs"
 
-#: src/gmountman.glade:951
+#: src/gmountman.glade:952
 msgid "translator-credits"
 msgstr "tłumacz-"
 
-#: src/gmountman.glade:976
+#: src/gmountman.glade:977
+#: src/gmountman:516
 msgid "Preferences"
 msgstr "Preferencje"
 
-#: src/gmountman.glade:1001
+#: src/gmountman.glade:1002
 msgid "<b>Open mounted devices with:</b>"
 msgstr "<b>Otwórz zamontowane urządzenie z:</b>"
 
-#: src/gmountman.glade:1010
+#: src/gmountman.glade:1011
 msgid "Default file manager (specified by XDG)"
 msgstr "Domyślny menadżer plików (określony przez XDG)"
 
-#: src/gmountman.glade:1028
+#: src/gmountman.glade:1029
 msgid "Custom file manager:"
 msgstr "Własny menadżer plików:"
 
-#: src/gmountman:372
+#: src/gmountman:447
+#: src/gmountman:510
+msgid "Unmount"
+msgstr "Odmontuj"
+
+#: src/gmountman:454
+#: src/gmountman:508
+msgid "Mount"
+msgstr "Zamontuj"
+
+#: src/gmountman:458
+#: src/gmountman:512
+msgid "Eject"
+msgstr "Wysuń"
+
+#: src/gmountman:467
+msgid "Hide"
+msgstr ""
+
+#: src/gmountman:469
+msgid "Show"
+msgstr ""
+
+#: src/gmountman:514
+msgid "Open"
+msgstr "Open"
+
+#: src/gmountman:523
 msgid "Name"
 msgstr "Nazwa"
 
-#: src/gmountman:374
+#: src/gmountman:525
 msgid "Device"
 msgstr "Urządzenie"
 
-#: src/gmountman:376
+#: src/gmountman:527
 msgid "Mount Point"
 msgstr "Punkt montowania"
+

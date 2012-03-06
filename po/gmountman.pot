@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-11 19:09+0300\n"
+"POT-Creation-Date: 2012-03-06 13:45+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,58 +21,82 @@ msgstr ""
 msgid "Mount Manager"
 msgstr ""
 
-#: src/gmountman.glade:115
+#: src/gmountman.glade:116
 msgid "Mount (m)"
 msgstr ""
 
-#: src/gmountman.glade:131
+#: src/gmountman.glade:132
 msgid "Unmount (u)"
 msgstr ""
 
-#: src/gmountman.glade:147
+#: src/gmountman.glade:148
 msgid "Eject (e)"
 msgstr ""
 
-#: src/gmountman.glade:163
+#: src/gmountman.glade:164
 msgid "Open (o)"
 msgstr ""
 
-#: src/gmountman.glade:188
+#: src/gmountman.glade:189
 msgid "Preferences (p)"
 msgstr ""
 
-#: src/gmountman.glade:273 gmountman.desktop.in.h:1
+#: src/gmountman.glade:274 gmountman.desktop.in.h:1
 msgid "A mount manager for local devices that uses gvfs"
 msgstr ""
 
-#: src/gmountman.glade:951
+#: src/gmountman.glade:952
 msgid "translator-credits"
 msgstr ""
 
-#: src/gmountman.glade:976
+#: src/gmountman.glade:977 src/gmountman:516
 msgid "Preferences"
 msgstr ""
 
-#: src/gmountman.glade:1001
+#: src/gmountman.glade:1002
 msgid "<b>Open mounted devices with:</b>"
 msgstr ""
 
-#: src/gmountman.glade:1010
+#: src/gmountman.glade:1011
 msgid "Default file manager (specified by XDG)"
 msgstr ""
 
-#: src/gmountman.glade:1028
+#: src/gmountman.glade:1029
 msgid "Custom file manager:"
 msgstr ""
 
-#: src/gmountman:372
+#: src/gmountman:447 src/gmountman:510
+msgid "Unmount"
+msgstr ""
+
+#: src/gmountman:454 src/gmountman:508
+msgid "Mount"
+msgstr ""
+
+#: src/gmountman:458 src/gmountman:512
+msgid "Eject"
+msgstr ""
+
+#: src/gmountman:467
+msgid "Hide"
+msgstr ""
+
+#: src/gmountman:469
+msgid "Show"
+msgstr ""
+
+#: src/gmountman:514
+msgid "Open"
+msgstr ""
+
+#: src/gmountman:523
 msgid "Name"
 msgstr ""
 
-#: src/gmountman:374
+#: src/gmountman:525
 msgid "Device"
 msgstr ""
 
-#: src/gmountman:376
+#: src/gmountman:527
 msgid "Mount Point"
 msgstr ""
