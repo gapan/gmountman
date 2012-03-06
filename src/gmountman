@@ -435,10 +435,14 @@ class GMountMan:
 			can_unmount = dev[5]
 			can_eject = dev[6]
 			submenu = gtk.Menu()
-			new_menuitem = gtk.MenuItem(name)
+			new_menuitem = gtk.ImageMenuItem(name)
+			img = gtk.Image()
+			img.set_from_pixbuf(icon)
+			new_menuitem.set_image(img)
 			new_menuitem.set_submenu(submenu)
 			if can_unmount:
-				unmount_menuitem = gtk.ImageMenuItem(_('Unmount'))
+				unmount_menuitem = gtk.ImageMenuItem(gtk.STOCK_REMOVE)
+				unmount_menuitem.set_label(_('Unmount'))
 				unmount_menuitem.connect("activate", self.trayunmount, node)
 				open_menuitem = gtk.ImageMenuItem(gtk.STOCK_OPEN)
 				open_menuitem.connect("activate", self.trayopen, mountpoint)
@@ -446,11 +450,16 @@ class GMountMan:
 				submenu.append(open_menuitem)
 			else:
 				if can_mount:
-					mount_menuitem = gtk.ImageMenuItem(_('Mount'))
+					mount_menuitem = gtk.ImageMenuItem(gtk.STOCK_ADD)
+					mount_menuitem.set_label(_('Mount'))
 					mount_menuitem.connect("activate", self.traymount, node)
 					submenu.append(mount_menuitem)
 			if can_eject:
 				eject_menuitem = gtk.ImageMenuItem(_('Eject'))
+				eject_menuitem.connect("activate", self.trayeject, node)
+				img = gtk.Image()
+				img.set_from_icon_name('media-eject', gtk.ICON_SIZE_MENU)
+				eject_menuitem.set_image(img)
 				submenu.append(eject_menuitem)
 			menu.append(new_menuitem)
 		menu.append(gtk.SeparatorMenuItem())
@@ -548,11 +557,6 @@ class GMountMan:
 		self.trayicon.connect('activate', self.on_tray_left_click)
 		self.trayicon.connect('popup-menu', self.on_tray_right_click)
 		self.trayicon.set_visible(False)
-
-		self.image_mount = builder.get_object('image_mount')
-		self.image_unmount = builder.get_object('image_unmount')
-		self.image_open = builder.get_object('image_open')
-		self.image_eject = builder.get_object('image_eject')
 
 		builder.connect_signals(self)
 
