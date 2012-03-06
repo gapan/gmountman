@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 #   <alexd@garrit.freeserve.co.uk>, 2011.
 #   <vlahavas@gmail.com>, 2011.
@@ -10,13 +10,13 @@ msgstr ""
 "Project-Id-Version: Salix\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-03-06 13:58+0200\n"
-"PO-Revision-Date: 2012-03-06 13:48+0200\n"
-"Last-Translator: George Vlahavas <vlahavas~at~gmail~dot~com>\n"
+"PO-Revision-Date: 2012-03-06 12:01+0000\n"
+"Last-Translator: gapan <vlahavas@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: gd\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: gd\n"
 "Plural-Forms: nplurals=3; plural=n < 2 ? 0 : n == 2 ? 1 : 2\n"
 
 #: src/gmountman.glade:25 gmountman.desktop.in.h:2
@@ -82,18 +82,3 @@ msgstr "Innleachd"
 #: src/gmountman:527
 msgid "Mount Point"
 msgstr "Ìre Cuir-na -àirde"
-
-#~ msgid "Mount (m)"
-#~ msgstr "Cuir-na-àirde (m)"
-
-#~ msgid "Unmount (u)"
-#~ msgstr "Thoir sios (u)"
-
-#~ msgid "Eject (e)"
-#~ msgstr "Tilg a-mach (e)"
-
-#~ msgid "Open (o)"
-#~ msgstr "Fosgail (f)"
-
-#~ msgid "Preferences (p)"
-#~ msgstr "Roghainnean (r)"

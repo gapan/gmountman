@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 #   <gambit73@gmail.com>, 2011.
 msgid ""
@@ -9,14 +9,13 @@ msgstr ""
 "Project-Id-Version: Salix\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-03-06 13:58+0200\n"
-"PO-Revision-Date: 2012-03-06 13:49+0200\n"
-"Last-Translator: George Vlahavas <vlahavas~at~gmail~dot~com>\n"
-"Language-Team: Dutch (http://www.transifex.net/projects/p/salix/language/"
-"nl/)\n"
-"Language: nl\n"
+"PO-Revision-Date: 2012-03-06 12:01+0000\n"
+"Last-Translator: gapan <vlahavas@gmail.com>\n"
+"Language-Team: Dutch (http://www.transifex.net/projects/p/salix/language/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: nl\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
 #: src/gmountman.glade:25 gmountman.desktop.in.h:2
@@ -82,18 +81,3 @@ msgstr "Apparaat"
 #: src/gmountman:527
 msgid "Mount Point"
 msgstr "Mount Punt"
-
-#~ msgid "Mount (m)"
-#~ msgstr "Mount (m)"
-
-#~ msgid "Unmount (u)"
-#~ msgstr "Unmounten (u)"
-
-#~ msgid "Eject (e)"
-#~ msgstr "Uitwerpen (e)"
-
-#~ msgid "Open (o)"
-#~ msgstr "Openen (o)"
-
-#~ msgid "Preferences (p)"
-#~ msgstr "Voorkeuren (p)"
