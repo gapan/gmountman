@@ -415,6 +415,15 @@ class GMountMan:
 		self.eject_device(device)
 		self.update_list()
 	
+	# if someone is *really* fast, it is possible to mount a device
+	# using the main window and right click on the system tray icon
+	# before the device gets actually mounted. So, the only option
+	# he'll see in the menu is for mounting the device, which by
+	# this time, will be already mounted. Same for unmounting. But I
+	# don't consider it much of a problem. Just right click again
+	# and you'll get the right options. And it's no harm trying to
+	# mount/unmount if the device is already mounted/unmounted
+	# anyway.
 	def on_tray_right_click(self, status, button, time):
 		menu = gtk.Menu()
 		for dev in self.devices():
