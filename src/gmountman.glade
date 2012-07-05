@@ -1075,7 +1075,7 @@ Public License instead of this License.  But first, please read
             </child>
             <child>
               <object class="GtkCheckButton" id="checkbutton_notifications">
-                <property name="label" translatable="yes">Display notifications when a device has been unmounted</property>
+                <property name="label" translatable="yes">Display a notification when a device has been unmounted</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">False</property>
