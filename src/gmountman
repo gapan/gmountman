@@ -575,8 +575,10 @@ class GMountMan:
 		self.radiobutton_prefs_customfm = builder.get_object('radiobutton_prefs_customfm')
 		self.entry_prefs_customfm = builder.get_object('entry_prefs_customfm')
 
+		self.label_pref_notifications = builder.get_object('label_pref_notifications')
 		self.checkbutton_notifications = builder.get_object('checkbutton_notifications')
 		if notifications_enabled is False:
+			self.label_pref_notifications.set_sensitive(False)
 			self.checkbutton_notifications.set_sensitive(False)
 		# Set default window size
 		self.set_default_window_size()
