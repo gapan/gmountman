@@ -271,7 +271,6 @@ class GMountMan:
 			if volume is not None:
 				node = volume.get_identifier('unix-device')
 				if node == device:
-					print name
 					m.unmount(self.callback_none, gio.MOUNT_UNMOUNT_NONE, None, None)
 					break
 
