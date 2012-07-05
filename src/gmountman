@@ -150,7 +150,7 @@ class GMountMan:
 	def on_mount_removed(self, vm, volume):
 		name = volume.get_name()
 		icon = self.icon_theme.choose_icon(volume.get_icon().get_names(), 48, 0).get_filename()
-		notification = pynotify.Notification(_('Device is now safe to remove'), _('The device %s is now safe to remove') % name, icon)
+		notification = pynotify.Notification(_('Device is now safe to remove'), _('The device %s can now be safely removed') % name, icon)
 		notification.set_timeout(3000)
 		notification.show()
 		self.update_list()
@@ -270,6 +270,7 @@ class GMountMan:
 			if volume is not None:
 				node = volume.get_identifier('unix-device')
 				if node == device:
+					print 'unmounting'
 					m.unmount(self.callback_none, gio.MOUNT_UNMOUNT_NONE, None, None)
 					break
 
