@@ -8,8 +8,12 @@ import ConfigParser
 import gio
 import subprocess
 
-import pynotify
-pynotify.init('gmountman')
+notifications_enabled = True
+try:
+	import pynotify
+	pynotify.init('gmountman')
+except:
+	notifications_enabled = False
 
 # Internationalization
 import locale
@@ -158,8 +162,8 @@ class GMountMan:
 		self.update_list()
 
 	def on_mount_removed(self, vm, volume):
-		notifications_enabled = self.checkbutton_notifications.get_active() 
-		if notifications_enabled is True:
+		show_notifications = self.checkbutton_notifications.get_active() 
+		if notifications_enabled is True and show_notifications is True:
 			name = volume.get_name()
 			icon = self.icon_theme.choose_icon(volume.get_icon().get_names(), 48, 0).get_filename()
 			notification = pynotify.Notification(_('Device is now safe to remove'), _('The device %s can now be safely removed') % name, icon)
@@ -569,9 +573,11 @@ class GMountMan:
 		self.button_prefs_cancel = builder.get_object('button_prefs_cancel')
 		self.radiobutton_prefs_defaultfm = builder.get_object('radiobutton_prefs_defaultfm')
 		self.radiobutton_prefs_customfm = builder.get_object('radiobutton_prefs_customfm')
-		self.checkbutton_notifications = builder.get_object('checkbutton_notifications')
 		self.entry_prefs_customfm = builder.get_object('entry_prefs_customfm')
 
+		self.checkbutton_notifications = builder.get_object('checkbutton_notifications')
+		if notifications_enabled is False:
+			self.checkbutton_notifications.set_sensitive(False)
 		# Set default window size
 		self.set_default_window_size()
 
