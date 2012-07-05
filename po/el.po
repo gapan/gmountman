@@ -1,44 +1,44 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 #   <vlahavas@gmail.com>, 2011, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: Salix\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-06 13:58+0200\n"
+"POT-Creation-Date: 2012-07-05 22:45+0300\n"
 "PO-Revision-Date: 2012-03-06 12:03+0000\n"
 "Last-Translator: gapan <vlahavas@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: el\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
 #: src/gmountman.glade:25 gmountman.desktop.in.h:2
 msgid "Mount Manager"
 msgstr "Διαχειριστής Προσάρτησης Συσκευών"
 
-#: src/gmountman.glade:116 src/gmountman:454 src/gmountman:508
+#: src/gmountman.glade:116 src/gmountman:488 src/gmountman:542
 msgid "Mount"
 msgstr "Προσάρτηση"
 
-#: src/gmountman.glade:132 src/gmountman:447 src/gmountman:510
+#: src/gmountman.glade:132 src/gmountman:481 src/gmountman:544
 msgid "Unmount"
 msgstr "Αποπροσάρτηση"
 
-#: src/gmountman.glade:148 src/gmountman:458 src/gmountman:512
+#: src/gmountman.glade:148 src/gmountman:492 src/gmountman:546
 msgid "Eject"
 msgstr "Εξαγωγή"
 
-#: src/gmountman.glade:164 src/gmountman:514
+#: src/gmountman.glade:164 src/gmountman:548
 msgid "Open"
 msgstr "Άνοιγμα"
 
-#: src/gmountman.glade:189 src/gmountman.glade:977 src/gmountman:516
+#: src/gmountman.glade:189 src/gmountman.glade:977 src/gmountman:550
 msgid "Preferences"
 msgstr "Προτιμήσεις"
 
@@ -62,22 +62,39 @@ msgstr "Εξ ορισμού διαχειριστή αρχείων (όπως ορ
 msgid "Custom file manager:"
 msgstr "Άλλο διαχειριστή αρχείων:"
 
-#: src/gmountman:467
+#: src/gmountman.glade:1069
+msgid "<b>Notifications:</b>"
+msgstr ""
+
+#: src/gmountman.glade:1078
+msgid "Display a notification when a device has been unmounted"
+msgstr ""
+
+#: src/gmountman:169
+msgid "Device is now safe to remove"
+msgstr ""
+
+#: src/gmountman:169
+#, python-format
+msgid "The device %s can now be safely removed"
+msgstr ""
+
+#: src/gmountman:501
 msgid "Hide"
 msgstr "Απόκρυψη"
 
-#: src/gmountman:469
+#: src/gmountman:503
 msgid "Show"
 msgstr "Εμφάνιση"
 
-#: src/gmountman:523
+#: src/gmountman:557
 msgid "Name"
 msgstr "Όνομα"
 
-#: src/gmountman:525
+#: src/gmountman:559
 msgid "Device"
 msgstr "Συσκευή"
 
-#: src/gmountman:527
+#: src/gmountman:561
 msgid "Mount Point"
 msgstr "Σημείο Προσάρτησης"
