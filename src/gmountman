@@ -32,6 +32,7 @@ class GMountMan:
 	win_width = 0
 
 	vm = gio.VolumeMonitor()
+	icon_theme = gtk.icon_theme_get_default()
 
 	def set_default_window_size(self):
 		try:
@@ -80,7 +81,6 @@ class GMountMan:
 	def devices(self):
 		mounted = []
 		devices = []
-		icon_theme = gtk.icon_theme_get_default()
 		mounts = self.vm.get_mounts()
 		if mounts != []:
 			for m in mounts:
@@ -89,7 +89,7 @@ class GMountMan:
 				# run, leading to false mounts. Add the
 				# AttributeError exception to catch this
 				try:
-					icon_filename = icon_theme.choose_icon(m.get_icon().get_names(), 24, 0).get_filename()
+					icon_filename = self.icon_theme.choose_icon(m.get_icon().get_names(), 24, 0).get_filename()
 					icon = gtk.gdk.pixbuf_new_from_file(icon_filename)
 					name = m.get_name()
 					node = m.get_volume().get_identifier('unix-device')
@@ -108,7 +108,7 @@ class GMountMan:
 		for v in self.vm.get_volumes():
 			node = v.get_identifier('unix-device')
 			if node not in mounted:
-				icon_filename =	icon_theme.choose_icon(v.get_icon().get_names(), 24, 0).get_filename()
+				icon_filename =	self.icon_theme.choose_icon(v.get_icon().get_names(), 24, 0).get_filename()
 				icon = gtk.gdk.pixbuf_new_from_file(icon_filename)
 				name = v.get_name()
 				mountpoint = None
@@ -149,8 +149,7 @@ class GMountMan:
 
 	def on_mount_removed(self, vm, volume):
 		name = volume.get_name()
-		icon_theme = gtk.icon_theme_get_default()
-		icon = icon_theme.choose_icon(volume.get_icon().get_names(), 48, 0).get_filename()
+		icon = self.icon_theme.choose_icon(volume.get_icon().get_names(), 48, 0).get_filename()
 		notification = pynotify.Notification(_('Device is now safe to remove'), _('The device %s is now safe to remove') % name, icon)
 		notification.set_timeout(3000)
 		notification.show()
