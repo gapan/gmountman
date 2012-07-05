@@ -78,6 +78,16 @@ class GMountMan:
 			self.entry_prefs_customfm.set_sensitive(True)
 		return filemanager
 
+	def get_notifications(self):
+		try:
+			self.config.read(self.config_file)
+			notifications = self.config.getboolean('Preferences',
+					'notifications')
+		except (ConfigParser.NoOptionError, ConfigParser.NoSectionError):
+			notifications = True
+		self.checkbutton_notifications.set_active(notifications)
+		return notifications
+
 	def devices(self):
 		mounted = []
 		devices = []
@@ -148,11 +158,13 @@ class GMountMan:
 		self.update_list()
 
 	def on_mount_removed(self, vm, volume):
-		name = volume.get_name()
-		icon = self.icon_theme.choose_icon(volume.get_icon().get_names(), 48, 0).get_filename()
-		notification = pynotify.Notification(_('Device is now safe to remove'), _('The device %s can now be safely removed') % name, icon)
-		notification.set_timeout(3000)
-		notification.show()
+		notifications_enabled = self.checkbutton_notifications.get_active() 
+		if notifications_enabled is True:
+			name = volume.get_name()
+			icon = self.icon_theme.choose_icon(volume.get_icon().get_names(), 48, 0).get_filename()
+			notification = pynotify.Notification(_('Device is now safe to remove'), _('The device %s can now be safely removed') % name, icon)
+			notification.set_timeout(3000)
+			notification.show()
 		self.update_list()
 
 	def on_key_release_event(self, widget, event):
@@ -356,7 +368,9 @@ class GMountMan:
 		else:
 			filemanager = self.entry_prefs_customfm.get_text()
 		self.defaultfm = filemanager
-		self.write_config(self.win_width, self.win_height, filemanager)
+		self.write_config(self.win_width, self.win_height,
+				filemanager,
+				self.checkbutton_notifications.get_active())
 		self.dialog_prefs.hide()
 	
 	def on_button_prefs_cancel_clicked(self, widget):
@@ -374,7 +388,7 @@ class GMountMan:
 	def on_gmountman_configure_event(self, widget, data=None):
 		self.win_width, self.win_height = self.window.get_size()
 
-	def write_config(self, width, height, filemanager):
+	def write_config(self, width, height, filemanager, notifications):
 		if not os.path.isdir(os.path.expanduser('~/.config')):
 			os.mkdir(os.path.expanduser('~/.config'))
 		try:
@@ -388,11 +402,14 @@ class GMountMan:
 		self.config.set('Window', 'width', width)
 		self.config.set('Window', 'height', height)
 		self.config.set('Preferences', 'filemanager', filemanager)
+		self.config.set('Preferences', 'notifications',
+				notifications)
 		with open(self.config_file, 'wb') as configfile:
 			self.config.write(configfile)
 
 	def gtk_main_quit(self, widget, data=None):
 		filemanager = self.defaultfm
+		notifications = self.checkbutton_notifications.get_active()
 		if self.win_width == 0:
 			width = self.initial_width
 		else:
@@ -401,7 +418,8 @@ class GMountMan:
 			height = self.initial_height
 		else:
 			height = self.win_height
-		self.write_config(width, height, filemanager)
+		self.write_config(width, height, filemanager,
+				notifications)
 		gtk.main_quit()
 
 	def toggle_main_window(self, data):
@@ -552,6 +570,7 @@ class GMountMan:
 		self.button_prefs_cancel = builder.get_object('button_prefs_cancel')
 		self.radiobutton_prefs_defaultfm = builder.get_object('radiobutton_prefs_defaultfm')
 		self.radiobutton_prefs_customfm = builder.get_object('radiobutton_prefs_customfm')
+		self.checkbutton_notifications = builder.get_object('checkbutton_notifications')
 		self.entry_prefs_customfm = builder.get_object('entry_prefs_customfm')
 
 		# Set default window size
@@ -560,6 +579,7 @@ class GMountMan:
 		self.update_list()
 
 		self.defaultfm = self.get_defaultfm()
+		self.notifications = self.get_notifications()
 
 		# Connect signals
 		self.vm.connect('volume-added', self.on_devices_changed)
