@@ -996,7 +996,7 @@ Public License instead of this License.  But first, please read
             <property name="orientation">vertical</property>
             <property name="spacing">10</property>
             <child>
-              <object class="GtkLabel" id="label2">
+              <object class="GtkLabel" id="label_pref_notifications">
                 <property name="visible">True</property>
                 <property name="xalign">0</property>
                 <property name="label" translatable="yes">&lt;b&gt;Notifications:&lt;/b&gt;</property>
