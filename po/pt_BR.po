@@ -3,99 +3,98 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-#   <akuna@free.fr>, 2011.
-# Cyrille Pontvieux <jrd@enialis.net>, 2011, 2012.
+#   <gordoviajao@yahoo.com.br>, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: Salix\n"
 "Report-Msgid-Bugs-To: http://sourceforge.net/apps/trac/salix/\n"
 "POT-Creation-Date: 2012-07-05 22:45+0300\n"
-"PO-Revision-Date: 2012-07-06 08:33+0000\n"
-"Last-Translator: Cyrille Pontvieux <jrd@enialis.net>\n"
-"Language-Team: French (http://www.transifex.com/projects/p/salix/language/fr/)\n"
+"PO-Revision-Date: 2012-07-05 19:51+0000\n"
+"Last-Translator: gapan <vlahavas@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: fr\n"
+"Language: pt_BR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1)\n"
 
 #: src/gmountman.glade:25 gmountman.desktop.in.h:2
 msgid "Mount Manager"
-msgstr "Gestionnaire de Montage"
+msgstr "Gerenciador de Montagem"
 
 #: src/gmountman.glade:116 src/gmountman:488 src/gmountman:542
 msgid "Mount"
-msgstr "Monter"
+msgstr "Montar"
 
 #: src/gmountman.glade:132 src/gmountman:481 src/gmountman:544
 msgid "Unmount"
-msgstr "Démonter"
+msgstr "Desmontar"
 
 #: src/gmountman.glade:148 src/gmountman:492 src/gmountman:546
 msgid "Eject"
-msgstr "Éjecter"
+msgstr "Ejetar"
 
 #: src/gmountman.glade:164 src/gmountman:548
 msgid "Open"
-msgstr "Ouvrir"
+msgstr "Abrir"
 
 #: src/gmountman.glade:189 src/gmountman.glade:977 src/gmountman:550
 msgid "Preferences"
-msgstr "Préférences"
+msgstr "Preferências"
 
 #: src/gmountman.glade:274 gmountman.desktop.in.h:1
 msgid "A mount manager for local devices that uses gvfs"
-msgstr "Un gestionnaire de montage pour périphériques locaux qui utilise gvfs"
+msgstr "Um gerenciador de montagem para dispositivos locais que usa gvfs"
 
 #: src/gmountman.glade:952
 msgid "translator-credits"
-msgstr "Pierrick Le Brun\nCyrille Pontvieux"
+msgstr "Tradutor - Fernando Henrique de Sousa"
 
 #: src/gmountman.glade:1002
 msgid "<b>Open mounted devices with:</b>"
-msgstr "<b>Ouvrez les périphériques montés avec :</b>"
+msgstr "<b>Abrir dispositivos montados com:</b>"
 
 #: src/gmountman.glade:1011
 msgid "Default file manager (specified by XDG)"
-msgstr "Gestionnaire de fichiers par défaut (spécifié par XDG)"
+msgstr "Gerenciador de arquivos padrão (especificado por XDG)"
 
 #: src/gmountman.glade:1029
 msgid "Custom file manager:"
-msgstr "Gestionnaire de fichiers personnalisé :"
+msgstr "Gerenciador de arquivos opcional:"
 
 #: src/gmountman.glade:1069
 msgid "<b>Notifications:</b>"
-msgstr "<b>Notifications :</b>"
+msgstr ""
 
 #: src/gmountman.glade:1078
 msgid "Display a notification when a device has been unmounted"
-msgstr "Affiche une notification lorsque le périphérique a été démonté"
+msgstr ""
 
 #: src/gmountman:169
 msgid "Device is now safe to remove"
-msgstr "Vous pouvez maintenant retirer le périphérique en toute sécurité"
+msgstr ""
 
 #: src/gmountman:169
 #, python-format
 msgid "The device %s can now be safely removed"
-msgstr "Le périphérique %s peut maintenant être retiré en toute sécurité"
+msgstr ""
 
 #: src/gmountman:501
 msgid "Hide"
-msgstr "Cacher"
+msgstr "Ocultar"
 
 #: src/gmountman:503
 msgid "Show"
-msgstr "Montrer"
+msgstr "Exibir"
 
 #: src/gmountman:557
 msgid "Name"
-msgstr "Nom"
+msgstr "Nome"
 
 #: src/gmountman:559
 msgid "Device"
-msgstr "Périphérique"
+msgstr "Dispositivo"
 
 #: src/gmountman:561
 msgid "Mount Point"
-msgstr "Point de montage"
+msgstr "Ponto de Montagem"

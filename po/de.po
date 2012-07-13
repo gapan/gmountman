@@ -1,22 +1,22 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Translators:
 #   <futur.andy@googlemail.com>, 2011.
+# Thorsten  <thenktor@gmx.de>, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: Salix\n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: http://sourceforge.net/apps/trac/salix/\n"
 "POT-Creation-Date: 2012-07-05 22:45+0300\n"
-"PO-Revision-Date: 2012-03-06 12:01+0000\n"
-"Last-Translator: gapan <vlahavas@gmail.com>\n"
-"Language-Team: German (http://www.transifex.net/projects/p/salix/language/"
-"de/)\n"
-"Language: de\n"
+"PO-Revision-Date: 2012-07-05 20:19+0000\n"
+"Last-Translator: Thorsten <thenktor@gmx.de>\n"
+"Language-Team: German (http://www.transifex.com/projects/p/salix/language/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
 #: src/gmountman.glade:25 gmountman.desktop.in.h:2
@@ -49,7 +49,7 @@ msgstr "GVFS-basierte Datenträgerverwaltung für lokale Geräte."
 
 #: src/gmountman.glade:952
 msgid "translator-credits"
-msgstr "Manfred Müller aka Quax"
+msgstr "Manfred Müller aka Quax\nThorsten Mühlfelder aka thenktor"
 
 #: src/gmountman.glade:1002
 msgid "<b>Open mounted devices with:</b>"
@@ -65,28 +65,28 @@ msgstr "Eigener Datei-Manager:"
 
 #: src/gmountman.glade:1069
 msgid "<b>Notifications:</b>"
-msgstr ""
+msgstr "<b>Mitteilungen:</b>"
 
 #: src/gmountman.glade:1078
 msgid "Display a notification when a device has been unmounted"
-msgstr ""
+msgstr "Eine Mitteilung anzeigen nachdem ein Laufwerk ausgehängt wurde"
 
 #: src/gmountman:169
 msgid "Device is now safe to remove"
-msgstr ""
+msgstr "Es ist jetzt sicher das Laufwerk zu entfernen"
 
 #: src/gmountman:169
 #, python-format
 msgid "The device %s can now be safely removed"
-msgstr ""
+msgstr "Das Laufwerk %s kann nun sicher entfernt werden"
 
 #: src/gmountman:501
 msgid "Hide"
-msgstr ""
+msgstr "Verbergen"
 
 #: src/gmountman:503
 msgid "Show"
-msgstr ""
+msgstr "Anzeigen"
 
 #: src/gmountman:557
 msgid "Name"

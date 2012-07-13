@@ -3,99 +3,99 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-#   <akuna@free.fr>, 2011.
-# Cyrille Pontvieux <jrd@enialis.net>, 2011, 2012.
+#   <genghiskhan@gmx.ca>, 2012.
+# Isratine Citizen <genghiskhan@gmx.ca>, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: Salix\n"
 "Report-Msgid-Bugs-To: http://sourceforge.net/apps/trac/salix/\n"
 "POT-Creation-Date: 2012-07-05 22:45+0300\n"
-"PO-Revision-Date: 2012-07-06 08:33+0000\n"
-"Last-Translator: Cyrille Pontvieux <jrd@enialis.net>\n"
-"Language-Team: French (http://www.transifex.com/projects/p/salix/language/fr/)\n"
+"PO-Revision-Date: 2012-07-06 14:06+0000\n"
+"Last-Translator: GenghisKhan <genghiskhan@gmx.ca>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: fr\n"
-"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+"Language: he\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
 #: src/gmountman.glade:25 gmountman.desktop.in.h:2
 msgid "Mount Manager"
-msgstr "Gestionnaire de Montage"
+msgstr "מנהל עגינה"
 
 #: src/gmountman.glade:116 src/gmountman:488 src/gmountman:542
 msgid "Mount"
-msgstr "Monter"
+msgstr "עיגון"
 
 #: src/gmountman.glade:132 src/gmountman:481 src/gmountman:544
 msgid "Unmount"
-msgstr "Démonter"
+msgstr "חילוץ"
 
 #: src/gmountman.glade:148 src/gmountman:492 src/gmountman:546
 msgid "Eject"
-msgstr "Éjecter"
+msgstr "שליפה"
 
 #: src/gmountman.glade:164 src/gmountman:548
 msgid "Open"
-msgstr "Ouvrir"
+msgstr "פתיחה"
 
 #: src/gmountman.glade:189 src/gmountman.glade:977 src/gmountman:550
 msgid "Preferences"
-msgstr "Préférences"
+msgstr "העדפות"
 
 #: src/gmountman.glade:274 gmountman.desktop.in.h:1
 msgid "A mount manager for local devices that uses gvfs"
-msgstr "Un gestionnaire de montage pour périphériques locaux qui utilise gvfs"
+msgstr "מנהל עגינה עבור התקנים מקומיים העושים שימוש ב־gvfs"
 
 #: src/gmountman.glade:952
 msgid "translator-credits"
-msgstr "Pierrick Le Brun\nCyrille Pontvieux"
+msgstr "Rahut Contributors:\n  Isratine Citizen <genghiskhan@gmx.ca>"
 
 #: src/gmountman.glade:1002
 msgid "<b>Open mounted devices with:</b>"
-msgstr "<b>Ouvrez les périphériques montés avec :</b>"
+msgstr "<b>פתיחת התקנים מעוגנים באמצעות:</b>"
 
 #: src/gmountman.glade:1011
 msgid "Default file manager (specified by XDG)"
-msgstr "Gestionnaire de fichiers par défaut (spécifié par XDG)"
+msgstr "מנהל קבצים ברירת־מחדל (מצוין לפי XDG)"
 
 #: src/gmountman.glade:1029
 msgid "Custom file manager:"
-msgstr "Gestionnaire de fichiers personnalisé :"
+msgstr "מנהל קבצים מותאם:"
 
 #: src/gmountman.glade:1069
 msgid "<b>Notifications:</b>"
-msgstr "<b>Notifications :</b>"
+msgstr "<b>התראות:</b>"
 
 #: src/gmountman.glade:1078
 msgid "Display a notification when a device has been unmounted"
-msgstr "Affiche une notification lorsque le périphérique a été démonté"
+msgstr "הצגת התראה כאשר התקן חולץ"
 
 #: src/gmountman:169
 msgid "Device is now safe to remove"
-msgstr "Vous pouvez maintenant retirer le périphérique en toute sécurité"
+msgstr "ניתן עתה לנתק את ההתקן בבטחה"
 
 #: src/gmountman:169
 #, python-format
 msgid "The device %s can now be safely removed"
-msgstr "Le périphérique %s peut maintenant être retiré en toute sécurité"
+msgstr "ניתן לנתק את ההתקן %s באופן בטוח"
 
 #: src/gmountman:501
 msgid "Hide"
-msgstr "Cacher"
+msgstr "הסתרה"
 
 #: src/gmountman:503
 msgid "Show"
-msgstr "Montrer"
+msgstr "הצגה"
 
 #: src/gmountman:557
 msgid "Name"
-msgstr "Nom"
+msgstr "שם"
 
 #: src/gmountman:559
 msgid "Device"
-msgstr "Périphérique"
+msgstr "התקן"
 
 #: src/gmountman:561
 msgid "Mount Point"
-msgstr "Point de montage"
+msgstr "נקודת עגינה"
