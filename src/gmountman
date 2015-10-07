@@ -121,8 +121,11 @@ class GMountMan:
 		for v in self.vm.get_volumes():
 			node = v.get_identifier('unix-device')
 			if node not in mounted:
-				icon_filename =	self.icon_theme.choose_icon(v.get_icon().get_names(), 24, 0).get_filename()
-				icon = gtk.gdk.pixbuf_new_from_file(icon_filename)
+				try:
+					icon_filename =	self.icon_theme.choose_icon(v.get_icon().get_names(), 24, 0).get_filename()
+					icon = gtk.gdk.pixbuf_new_from_file(icon_filename)
+				except AttributeError:
+					icon = None
 				name = v.get_name()
 				mountpoint = None
 				can_mount = v.can_mount()
