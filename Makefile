@@ -28,7 +28,7 @@ pot:
 	xgettext --from-code=utf-8 \
 		-L Glade \
 		-o po/gmountman.pot \
-		src/gmountman.glade
+		src/gmountman.ui
 	xgettext --from-code=utf-8 \
 		-j \
 		-L Python \
@@ -52,7 +52,7 @@ install: install-icons install-mo
 	install -d -m 755 $(DESTDIR)/usr/share/applications
 	install -d -m 755 $(DESTDIR)/usr/share/gmountman
 	install -m 755 src/gmountman $(DESTDIR)/usr/bin/
-	install -m 644 src/gmountman.glade $(DESTDIR)/usr/share/gmountman/
+	install -m 644 src/gmountman.ui $(DESTDIR)/usr/share/gmountman/
 	install -m 644 gmountman.desktop $(DESTDIR)/usr/share/applications/
 
 .PHONY: install-icons

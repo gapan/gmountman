@@ -537,10 +537,10 @@ class GMountMan:
     def __init__(self):
         builder = gtk.Builder()
         builder.set_translation_domain("gmountman")
-        if os.path.exists('gmountman.glade'):
-            builder.add_from_file('gmountman.glade')
-        elif os.path.exists('/usr/share/gmountman/gmountman.glade'):
-            builder.add_from_file('/usr/share/gmountman/gmountman.glade')
+        if os.path.exists('gmountman.ui'):
+            builder.add_from_file('gmountman.ui')
+        elif os.path.exists('/usr/share/gmountman/gmountman.ui'):
+            builder.add_from_file('/usr/share/gmountman/gmountman.ui')
         self.window = builder.get_object('gmountman')
 
         #
