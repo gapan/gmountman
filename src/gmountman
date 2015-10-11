@@ -27,6 +27,7 @@ _ = gettext.gettext
 
 tray = False
 
+
 class GMountMan:
     config = ConfigParser.RawConfigParser()
     config_file = os.path.expanduser('~/.config/gmountman')
@@ -51,8 +52,8 @@ class GMountMan:
                 w = gtk.gdk.get_default_root_window()
                 p = gtk.gdk.atom_intern('_NET_WORKAREA')
                 width, height = w.property_get(p)[2][2:4]
-                req_width = int(width*0.7)
-                req_height = int(height*0.7)
+                req_width = int(width * 0.7)
+                req_height = int(height * 0.7)
                 if req_width < 500:
                     req_width = width
                     self.initial_width = width
@@ -64,7 +65,6 @@ class GMountMan:
                 self.window.set_default_size(500, 450)
                 self.initial_width = 500
                 self.initial_height = 450
-
 
     def get_defaultfm(self):
         try:
@@ -86,7 +86,7 @@ class GMountMan:
         try:
             self.config.read(self.config_file)
             notifications = self.config.getboolean('Preferences',
-                    'notifications')
+                                                   'notifications')
         except (ConfigParser.NoOptionError, ConfigParser.NoSectionError):
             notifications = True
         self.checkbutton_notifications.set_active(notifications)
@@ -103,7 +103,8 @@ class GMountMan:
                 # run, leading to false mounts. Add the
                 # AttributeError exception to catch this
                 try:
-                    icon_filename = self.icon_theme.choose_icon(m.get_icon().get_names(), 24, 0).get_filename()
+                    icon_filename = self.icon_theme.choose_icon(
+                        m.get_icon().get_names(), 24, 0).get_filename()
                     icon = gtk.gdk.pixbuf_new_from_file(icon_filename)
                     name = m.get_name()
                     node = m.get_volume().get_identifier('unix-device')
@@ -114,16 +115,17 @@ class GMountMan:
                     if not m.is_shadowed():
                         mounted.append(node)
                         devices.append([icon, name,
-                            node, mountpoint,
-                            can_mount, can_unmount,
-                            can_eject])
+                                        node, mountpoint,
+                                        can_mount, can_unmount,
+                                        can_eject])
                 except AttributeError:
                     pass
         for v in self.vm.get_volumes():
             node = v.get_identifier('unix-device')
             if node not in mounted:
                 try:
-                    icon_filename =    self.icon_theme.choose_icon(v.get_icon().get_names(), 24, 0).get_filename()
+                    icon_filename = self.icon_theme.choose_icon(
+                        v.get_icon().get_names(), 24, 0).get_filename()
                     icon = gtk.gdk.pixbuf_new_from_file(icon_filename)
                 except AttributeError:
                     icon = None
@@ -133,8 +135,8 @@ class GMountMan:
                 can_unmount = None
                 can_eject = v.can_eject()
                 devices.append([icon, name, node,
-                    mountpoint, can_mount,
-                    can_unmount, can_eject])
+                                mountpoint, can_mount,
+                                can_unmount, can_eject])
         return sorted(devices, key=lambda node: node[2])
 
     def update_list(self):
@@ -146,12 +148,12 @@ class GMountMan:
         except TypeError:
             pass
         self.liststore_devices.clear()
-        for d in self.devices(): 
+        for d in self.devices():
             self.liststore_devices.append(d)
         if device is not None:
             iter = self.liststore_devices.get_iter_first()
             count = 0
-            while ( iter is not None):
+            while (iter is not None):
                 if device != self.liststore_devices.get_value(
                         iter, 2):
                     count += 1
@@ -165,11 +167,14 @@ class GMountMan:
         self.update_list()
 
     def on_mount_removed(self, vm, volume):
-        show_notifications = self.checkbutton_notifications.get_active() 
+        show_notifications = self.checkbutton_notifications.get_active()
         if notifications_enabled is True and show_notifications is True:
             name = volume.get_name()
-            icon = self.icon_theme.choose_icon(volume.get_icon().get_names(), 48, 0).get_filename()
-            notification = pynotify.Notification(_('Device is now safe to remove'), _('The device %s can now be safely removed') % name, icon)
+            icon = self.icon_theme.choose_icon(
+                volume.get_icon().get_names(), 48, 0).get_filename()
+            notification = pynotify.Notification(
+                _('Device is now safe to remove'), _(
+                    'The device %s can now be safely removed') % name, icon)
             notification.set_timeout(3000)
             notification.show()
         self.update_list()
@@ -278,9 +283,10 @@ class GMountMan:
         for v in volumes:
             node = v.get_identifier('unix-device')
             if node == device:
-                v.mount(None, self.callback_none, gio.MOUNT_UNMOUNT_NONE, None, None)
+                v.mount(None, self.callback_none,
+                        gio.MOUNT_UNMOUNT_NONE, None, None)
                 break
-    
+
     def unmount_device(self, device):
         mounts = self.vm.get_mounts()
         for m in mounts:
@@ -289,7 +295,8 @@ class GMountMan:
             if volume is not None:
                 node = volume.get_identifier('unix-device')
                 if node == device:
-                    m.unmount(self.callback_none, gio.MOUNT_UNMOUNT_NONE, None, None)
+                    m.unmount(self.callback_none,
+                              gio.MOUNT_UNMOUNT_NONE, None, None)
                     break
 
     def eject_device(self, device):
@@ -375,10 +382,10 @@ class GMountMan:
             filemanager = self.entry_prefs_customfm.get_text()
         self.defaultfm = filemanager
         self.write_config(self.win_width, self.win_height,
-                filemanager,
-                self.checkbutton_notifications.get_active())
+                          filemanager,
+                          self.checkbutton_notifications.get_active())
         self.dialog_prefs.hide()
-    
+
     def on_button_prefs_cancel_clicked(self, widget):
         if self.defaultfm == 'xdg-open':
             self.radiobutton_prefs_defaultfm.set_active(True)
@@ -388,7 +395,7 @@ class GMountMan:
             self.radiobutton_prefs_customfm.set_active(True)
             self.entry_prefs_customfm.set_text(self.defaultfm)
             self.entry_prefs_customfm.set_sensitive(True)
-            
+
         self.dialog_prefs.hide()
 
     def on_gmountman_configure_event(self, widget, data=None):
@@ -409,7 +416,7 @@ class GMountMan:
         self.config.set('Window', 'height', height)
         self.config.set('Preferences', 'filemanager', filemanager)
         self.config.set('Preferences', 'notifications',
-                notifications)
+                        notifications)
         with open(self.config_file, 'wb') as configfile:
             self.config.write(configfile)
 
@@ -425,7 +432,7 @@ class GMountMan:
         else:
             height = self.win_height
         self.write_config(width, height, filemanager,
-                notifications)
+                          notifications)
         gtk.main_quit()
 
     def toggle_main_window(self, data):
@@ -444,14 +451,14 @@ class GMountMan:
     def trayunmount(self, widget, device):
         self.unmount_device(device)
         self.update_list()
-    
+
     def trayopen(self, widget, mountpoint):
         self.open_mountpoint(mountpoint)
-    
+
     def trayeject(self, widget, device):
         self.eject_device(device)
         self.update_list()
-    
+
     # if someone is *really* fast, it is possible to mount a device
     # using the main window and right click on the system tray icon
     # before the device gets actually mounted. So, the only option
@@ -543,15 +550,15 @@ class GMountMan:
         self.treeview_devices = builder.get_object('treeview_devices')
         self.liststore_devices = builder.get_object('liststore_devices')
         self.button_mount = builder.get_object('button_mount')
-        self.button_mount.set_label(_('Mount')+' (m)')
+        self.button_mount.set_label(_('Mount') + ' (m)')
         self.button_umount = builder.get_object('button_umount')
-        self.button_umount.set_label(_('Unmount')+' (u)')
+        self.button_umount.set_label(_('Unmount') + ' (u)')
         self.button_eject = builder.get_object('button_eject')
-        self.button_eject.set_label(_('Eject')+' (e)')
+        self.button_eject.set_label(_('Eject') + ' (e)')
         self.button_open = builder.get_object('button_open')
-        self.button_open.set_label(_('Open')+' (o)')
+        self.button_open.set_label(_('Open') + ' (o)')
         self.button_prefs = builder.get_object('button_prefs')
-        self.button_prefs.set_label(_('Preferences')+' (p)')
+        self.button_prefs.set_label(_('Preferences') + ' (p)')
         self.button_close = builder.get_object('button_close')
         self.button_about = builder.get_object('button_about')
         self.treeview_devices = builder.get_object('treeview_devices')
@@ -561,7 +568,8 @@ class GMountMan:
         self.treeviewcolumn_name.set_title(_('Name'))
         self.treeviewcolumn_node = builder.get_object('treeviewcolumn_node')
         self.treeviewcolumn_node.set_title(_('Device'))
-        self.treeviewcolumn_mountpoint = builder.get_object('treeviewcolumn_mountpoint')
+        self.treeviewcolumn_mountpoint = builder.get_object(
+            'treeviewcolumn_mountpoint')
         self.treeviewcolumn_mountpoint.set_title(_('Mount Point'))
 
         #
@@ -575,12 +583,16 @@ class GMountMan:
         self.dialog_prefs = builder.get_object('dialog_prefs')
         self.button_prefs_ok = builder.get_object('button_prefs_ok')
         self.button_prefs_cancel = builder.get_object('button_prefs_cancel')
-        self.radiobutton_prefs_defaultfm = builder.get_object('radiobutton_prefs_defaultfm')
-        self.radiobutton_prefs_customfm = builder.get_object('radiobutton_prefs_customfm')
+        self.radiobutton_prefs_defaultfm = builder.get_object(
+            'radiobutton_prefs_defaultfm')
+        self.radiobutton_prefs_customfm = builder.get_object(
+            'radiobutton_prefs_customfm')
         self.entry_prefs_customfm = builder.get_object('entry_prefs_customfm')
 
-        self.label_pref_notifications = builder.get_object('label_pref_notifications')
-        self.checkbutton_notifications = builder.get_object('checkbutton_notifications')
+        self.label_pref_notifications = builder.get_object(
+            'label_pref_notifications')
+        self.checkbutton_notifications = builder.get_object(
+            'checkbutton_notifications')
         if notifications_enabled is False:
             self.label_pref_notifications.set_sensitive(False)
             self.checkbutton_notifications.set_sensitive(False)
@@ -609,6 +621,7 @@ class GMountMan:
 
         builder.connect_signals(self)
 
+
 def parse_args(argv):
     global tray
     try:
@@ -629,8 +642,9 @@ def parse_args(argv):
         app.window.show()
     gtk.main()
 
+
 def usage():
-    print 'USAGE:', os.path.basename(sys.argv[0]),'[OPTIONS]'
+    print 'USAGE:', os.path.basename(sys.argv[0]), '[OPTIONS]'
     print
     print 'OPTIONS:'
     print '   -t, --tray         start in system tray'
@@ -638,4 +652,3 @@ def usage():
 
 if __name__ == "__main__":
     parse_args(sys.argv[1:])
-
