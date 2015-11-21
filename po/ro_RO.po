@@ -1,0 +1,100 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Translators:
+# Arian - Cazare Muncitori <arianserv@gmail.com>, 2014
+msgid ""
+msgstr ""
+"Project-Id-Version: Salix\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-07-05 22:45+0300\n"
+"PO-Revision-Date: 2015-08-11 11:23+0000\n"
+"Last-Translator: Arian - Cazare Muncitori <arianserv@gmail.com>\n"
+"Language-Team: Romanian (Romania) (http://www.transifex.com/gapan/salix/language/ro_RO/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ro_RO\n"
+"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
+
+#: src/gmountman.glade:25 gmountman.desktop.in.h:2
+msgid "Mount Manager"
+msgstr "Manager de Montare"
+
+#: src/gmountman.glade:116 src/gmountman:488 src/gmountman:542
+msgid "Mount"
+msgstr "Montare"
+
+#: src/gmountman.glade:132 src/gmountman:481 src/gmountman:544
+msgid "Unmount"
+msgstr "Demontare"
+
+#: src/gmountman.glade:148 src/gmountman:492 src/gmountman:546
+msgid "Eject"
+msgstr "Eject"
+
+#: src/gmountman.glade:164 src/gmountman:548
+msgid "Open"
+msgstr "Deschidere"
+
+#: src/gmountman.glade:189 src/gmountman.glade:977 src/gmountman:550
+msgid "Preferences"
+msgstr "Preferinţe"
+
+#: src/gmountman.glade:274 gmountman.desktop.in.h:1
+msgid "A mount manager for local devices that uses gvfs"
+msgstr "Un manager de montare pentru dispozitivele locale ce folosesc gvfs"
+
+#: src/gmountman.glade:952
+msgid "translator-credits"
+msgstr "creditare-translatori"
+
+#: src/gmountman.glade:1002
+msgid "<b>Open mounted devices with:</b>"
+msgstr "<b>Deschideţi dipozitivele montate cu:</b>"
+
+#: src/gmountman.glade:1011
+msgid "Default file manager (specified by XDG)"
+msgstr "Manager fişiere, implicit (specificat de către XDG)"
+
+#: src/gmountman.glade:1029
+msgid "Custom file manager:"
+msgstr "Manager fişiere personalizat"
+
+#: src/gmountman.glade:1069
+msgid "<b>Notifications:</b>"
+msgstr "<b>Notificări:</b>"
+
+#: src/gmountman.glade:1078
+msgid "Display a notification when a device has been unmounted"
+msgstr "Afişează notificările când este demontat un dispozitiv"
+
+#: src/gmountman:169
+msgid "Device is now safe to remove"
+msgstr "Dispozitivul, poate fi acum demontat în siguranţă"
+
+#: src/gmountman:169
+#, python-format
+msgid "The device %s can now be safely removed"
+msgstr "Dispozitivul %s , poate fi acum demontat în siguranţă"
+
+#: src/gmountman:501
+msgid "Hide"
+msgstr "Ascundere"
+
+#: src/gmountman:503
+msgid "Show"
+msgstr "Afişare"
+
+#: src/gmountman:557
+msgid "Name"
+msgstr "Nume"
+
+#: src/gmountman:559
+msgid "Device"
+msgstr "Dispozitiv"
+
+#: src/gmountman:561
+msgid "Mount Point"
+msgstr "Punct Montare"
