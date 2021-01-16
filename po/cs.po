@@ -3,19 +3,20 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Jiří Šůla <jiri.sula@gmail.com>, 2012
 msgid ""
 msgstr ""
 "Project-Id-Version: Salix\n"
-"Report-Msgid-Bugs-To: http://sourceforge.net/apps/trac/salix/\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-07-05 22:45+0300\n"
-"PO-Revision-Date: 2012-07-05 19:51+0000\n"
-"Last-Translator: gapan <vlahavas@gmail.com>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2017-09-19 12:24+0000\n"
+"Last-Translator: Dimitris Glezos <glezos@transifex.com>\n"
+"Language-Team: Czech (http://www.transifex.com/gapan/salix/language/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: cs\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2\n"
+"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
 
 #: src/gmountman.glade:25 gmountman.desktop.in.h:2
 msgid "Mount Manager"
@@ -63,20 +64,20 @@ msgstr "Upravený souborový správce:"
 
 #: src/gmountman.glade:1069
 msgid "<b>Notifications:</b>"
-msgstr ""
+msgstr "<b>Oznámení:</b>"
 
 #: src/gmountman.glade:1078
 msgid "Display a notification when a device has been unmounted"
-msgstr ""
+msgstr "Zobrazit oznámení pokud bylo zařízení odpojeno"
 
 #: src/gmountman:169
 msgid "Device is now safe to remove"
-msgstr ""
+msgstr "Zařízení lze nyní bezpečně odebrat"
 
 #: src/gmountman:169
 #, python-format
 msgid "The device %s can now be safely removed"
-msgstr ""
+msgstr "Zařízení %s nyní může být bezpečně odebráno"
 
 #: src/gmountman:501
 msgid "Hide"

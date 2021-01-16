@@ -3,20 +3,20 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Yarema aka Knedlyk <yupadmin@gmail.com>, 2011, 2012.
+# Yarema aka Knedlyk <yupadmin@gmail.com>, 2011, 2012
 msgid ""
 msgstr ""
 "Project-Id-Version: Salix\n"
-"Report-Msgid-Bugs-To: http://sourceforge.net/apps/trac/salix/\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-07-05 22:45+0300\n"
-"PO-Revision-Date: 2012-07-05 19:51+0000\n"
-"Last-Translator: gapan <vlahavas@gmail.com>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2017-09-19 10:25+0000\n"
+"Last-Translator: Dimitris Glezos <glezos@transifex.com>\n"
+"Language-Team: Ukrainian (http://www.transifex.com/gapan/salix/language/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: uk\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
 #: src/gmountman.glade:25 gmountman.desktop.in.h:2
 msgid "Mount Manager"
@@ -64,20 +64,20 @@ msgstr "Менеджер файлів визначений користувач�
 
 #: src/gmountman.glade:1069
 msgid "<b>Notifications:</b>"
-msgstr ""
+msgstr "<b>Повідомлення:</b>"
 
 #: src/gmountman.glade:1078
 msgid "Display a notification when a device has been unmounted"
-msgstr ""
+msgstr "Показати повідомлення, коли пристрій змонтовано"
 
 #: src/gmountman:169
 msgid "Device is now safe to remove"
-msgstr ""
+msgstr "Тепер можна безпечно вилучити пристрій"
 
 #: src/gmountman:169
 #, python-format
 msgid "The device %s can now be safely removed"
-msgstr ""
+msgstr "Пристрій %s тепер можна безпечно вилучити"
 
 #: src/gmountman:501
 msgid "Hide"

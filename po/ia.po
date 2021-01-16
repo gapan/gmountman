@@ -3,97 +3,98 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# giogio <g.sora@tiscali.it>, 2020
 msgid ""
 msgstr ""
 "Project-Id-Version: Salix\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-07-05 22:45+0300\n"
-"PO-Revision-Date: 2016-06-04 22:10+0000\n"
-"Last-Translator: gapan <vlahavas@gmail.com>\n"
-"Language-Team: Italian (Italy) (http://www.transifex.com/gapan/salix/language/it_IT/)\n"
+"PO-Revision-Date: 2020-03-01 14:30+0000\n"
+"Last-Translator: giogio <g.sora@tiscali.it>\n"
+"Language-Team: Interlingua (http://www.transifex.com/gapan/salix/language/ia/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: it_IT\n"
+"Language: ia\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: src/gmountman.glade:25 gmountman.desktop.in.h:2
 msgid "Mount Manager"
-msgstr ""
+msgstr "Gerente de montage"
 
 #: src/gmountman.glade:116 src/gmountman:488 src/gmountman:542
 msgid "Mount"
-msgstr ""
+msgstr "Montar"
 
 #: src/gmountman.glade:132 src/gmountman:481 src/gmountman:544
 msgid "Unmount"
-msgstr ""
+msgstr "Dismontar"
 
 #: src/gmountman.glade:148 src/gmountman:492 src/gmountman:546
 msgid "Eject"
-msgstr ""
+msgstr "Ejectar"
 
 #: src/gmountman.glade:164 src/gmountman:548
 msgid "Open"
-msgstr ""
+msgstr "Aperir"
 
 #: src/gmountman.glade:189 src/gmountman.glade:977 src/gmountman:550
 msgid "Preferences"
-msgstr ""
+msgstr "Preferentias"
 
 #: src/gmountman.glade:274 gmountman.desktop.in.h:1
 msgid "A mount manager for local devices that uses gvfs"
-msgstr ""
+msgstr "Un gerente de montage per dispositivos local que usa gvfs"
 
 #: src/gmountman.glade:952
 msgid "translator-credits"
-msgstr "traduttore-crediti"
+msgstr "traductor-creditos"
 
 #: src/gmountman.glade:1002
 msgid "<b>Open mounted devices with:</b>"
-msgstr ""
+msgstr "<b>Aperir dispositivos montate con:</b>"
 
 #: src/gmountman.glade:1011
 msgid "Default file manager (specified by XDG)"
-msgstr ""
+msgstr "Gerente de file predefinite (specificate per XDG)"
 
 #: src/gmountman.glade:1029
 msgid "Custom file manager:"
-msgstr ""
+msgstr "Gerente de file personalisate:"
 
 #: src/gmountman.glade:1069
 msgid "<b>Notifications:</b>"
-msgstr ""
+msgstr "<b>Notificationes:</b>"
 
 #: src/gmountman.glade:1078
 msgid "Display a notification when a device has been unmounted"
-msgstr ""
+msgstr "Monstra un notification quando un dispositivo ha essite montate"
 
 #: src/gmountman:169
 msgid "Device is now safe to remove"
-msgstr ""
+msgstr "Dispositivo nunc es preste per remover"
 
 #: src/gmountman:169
 #, python-format
 msgid "The device %s can now be safely removed"
-msgstr ""
+msgstr "Le dispositivo %s pote nunc essere removite con securitate"
 
 #: src/gmountman:501
 msgid "Hide"
-msgstr ""
+msgstr "Cela"
 
 #: src/gmountman:503
 msgid "Show"
-msgstr ""
+msgstr "Monstra"
 
 #: src/gmountman:557
 msgid "Name"
-msgstr ""
+msgstr "Nomine"
 
 #: src/gmountman:559
 msgid "Device"
-msgstr ""
+msgstr "Dispositivo"
 
 #: src/gmountman:561
 msgid "Mount Point"
-msgstr ""
+msgstr "Puncto de montage"

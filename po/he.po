@@ -3,21 +3,22 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-#   <genghiskhan@gmx.ca>, 2012.
-# Isratine Citizen <genghiskhan@gmx.ca>, 2012.
+# GenghisKhan <genghiskhan@gmx.ca>, 2013-2014
+# GenghisKhan <genghiskhan@gmx.ca>, 2012
+# GenghisKhan <genghiskhan@gmx.ca>, 2012
 msgid ""
 msgstr ""
 "Project-Id-Version: Salix\n"
-"Report-Msgid-Bugs-To: http://sourceforge.net/apps/trac/salix/\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-07-05 22:45+0300\n"
-"PO-Revision-Date: 2012-07-06 14:06+0000\n"
+"PO-Revision-Date: 2017-09-19 13:04+0000\n"
 "Last-Translator: GenghisKhan <genghiskhan@gmx.ca>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language-Team: Hebrew (http://www.transifex.com/gapan/salix/language/he/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: he\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
 
 #: src/gmountman.glade:25 gmountman.desktop.in.h:2
 msgid "Mount Manager"
@@ -25,19 +26,19 @@ msgstr "מנהל עגינה"
 
 #: src/gmountman.glade:116 src/gmountman:488 src/gmountman:542
 msgid "Mount"
-msgstr "עיגון"
+msgstr "עגן"
 
 #: src/gmountman.glade:132 src/gmountman:481 src/gmountman:544
 msgid "Unmount"
-msgstr "חילוץ"
+msgstr "חלץ"
 
 #: src/gmountman.glade:148 src/gmountman:492 src/gmountman:546
 msgid "Eject"
-msgstr "שליפה"
+msgstr "הוצא"
 
 #: src/gmountman.glade:164 src/gmountman:548
 msgid "Open"
-msgstr "פתיחה"
+msgstr "פתח"
 
 #: src/gmountman.glade:189 src/gmountman.glade:977 src/gmountman:550
 msgid "Preferences"
@@ -53,11 +54,11 @@ msgstr "Rahut Contributors:\n  Isratine Citizen <genghiskhan@gmx.ca>"
 
 #: src/gmountman.glade:1002
 msgid "<b>Open mounted devices with:</b>"
-msgstr "<b>פתיחת התקנים מעוגנים באמצעות:</b>"
+msgstr "<b>פתח התקנים עגונים באמצעות:</b>"
 
 #: src/gmountman.glade:1011
 msgid "Default file manager (specified by XDG)"
-msgstr "מנהל קבצים ברירת־מחדל (מצוין לפי XDG)"
+msgstr "מנהל קבצים ברירת מחדל (מצוין לפי XDG)"
 
 #: src/gmountman.glade:1029
 msgid "Custom file manager:"
@@ -69,7 +70,7 @@ msgstr "<b>התראות:</b>"
 
 #: src/gmountman.glade:1078
 msgid "Display a notification when a device has been unmounted"
-msgstr "הצגת התראה כאשר התקן חולץ"
+msgstr "הצג התראה כאשר התקן חולץ"
 
 #: src/gmountman:169
 msgid "Device is now safe to remove"
@@ -82,11 +83,11 @@ msgstr "ניתן לנתק את ההתקן %s באופן בטוח"
 
 #: src/gmountman:501
 msgid "Hide"
-msgstr "הסתרה"
+msgstr "הסתר"
 
 #: src/gmountman:503
 msgid "Show"
-msgstr "הצגה"
+msgstr "הצג"
 
 #: src/gmountman:557
 msgid "Name"

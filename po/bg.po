@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Tony Ivanov <antonivanov8@gmail.com>, 2015
+# Tony Ivanov <duskull88@fastmail.fm>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Salix\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-07-05 22:45+0300\n"
-"PO-Revision-Date: 2015-08-11 11:23+0000\n"
-"Last-Translator: Tony Ivanov <antonivanov8@gmail.com>\n"
+"PO-Revision-Date: 2017-09-22 03:29+0000\n"
+"Last-Translator: Tony Ivanov <duskull88@fastmail.fm>\n"
 "Language-Team: Bulgarian (http://www.transifex.com/gapan/salix/language/bg/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
