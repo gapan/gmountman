@@ -270,7 +270,7 @@
     <property name="skip_pager_hint">True</property>
     <property name="transient_for">gmountman</property>
     <property name="program_name">GMountMan</property>
-    <property name="copyright">Copyright &#xA9; 2011 George Vlahavas</property>
+    <property name="copyright">Copyright &#xA9; 2011-2021 George Vlahavas</property>
     <property name="comments" translatable="yes">A mount manager for local devices that uses gvfs</property>
     <property name="website">http://www.salixos.org/wiki/index.php/GMountMan</property>
     <property name="license">                    GNU GENERAL PUBLIC LICENSE
