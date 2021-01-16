@@ -1,18 +1,26 @@
-#!/usr/bin/env python
+#!/usr/bin/python3
 # vim:et:sta:sts=4:sw=4:ts=8:tw=79:
 
-import gtk
+import gi
+gi.require_version('Gtk', '3.0')
+gi.require_version('GdkPixbuf', '2.0')
+from gi.repository import Gio
+from gi.repository import Gtk
+from gi.repository import Gdk
+from gi.repository import GLib
+from gi.repository import GdkPixbuf
 import os
 import sys
 import getopt
-import ConfigParser
-import gio
+import configparser
 import subprocess
+import threading
 
 notifications_enabled = True
 try:
-    import pynotify
-    pynotify.init('gmountman')
+    gi.require_version('Notify', '0.7')
+    from gi.repository import Notify
+    Notify.init('gmountman')
 except:
     notifications_enabled = False
 
@@ -27,17 +35,23 @@ _ = gettext.gettext
 
 tray = False
 
+def threaded(f):
+    def wrapper(*args):
+        t = threading.Thread(target=f, args=args)
+        t.daemon = True
+        t.start()
+    return wrapper
 
 class GMountMan:
-    config = ConfigParser.RawConfigParser()
+    config = configparser.ConfigParser()
     config_file = os.path.expanduser('~/.config/gmountman')
     initial_height = 0
     win_height = 0
     initial_width = 0
     win_width = 0
 
-    vm = gio.VolumeMonitor()
-    icon_theme = gtk.icon_theme_get_default()
+    vm = Gio.VolumeMonitor.get()
+    icon_theme = Gtk.IconTheme.get_default()
 
     def set_default_window_size(self):
         try:
@@ -47,10 +61,10 @@ class GMountMan:
             self.initial_height = self.config.getint('Window', 'height')
             height = self.initial_height
             self.window.set_default_size(width, height)
-        except (ConfigParser.NoOptionError, ConfigParser.NoSectionError):
+        except (configparser.NoOptionError, configparser.NoSectionError):
             try:
-                w = gtk.gdk.get_default_root_window()
-                p = gtk.gdk.atom_intern('_NET_WORKAREA')
+                w = Gdk.get_default_root_window()
+                p = Gdk.atom_intern('_NET_WORKAREA')
                 width, height = w.property_get(p)[2][2:4]
                 req_width = int(width * 0.7)
                 req_height = int(height * 0.7)
@@ -70,7 +84,7 @@ class GMountMan:
         try:
             self.config.read(self.config_file)
             filemanager = self.config.get('Preferences', 'filemanager')
-        except (ConfigParser.NoOptionError, ConfigParser.NoSectionError):
+        except (configparser.NoOptionError, configparser.NoSectionError):
             filemanager = 'xdg-open'
         if filemanager == 'xdg-open':
             self.radiobutton_prefs_defaultfm.set_active(True)
@@ -87,7 +101,7 @@ class GMountMan:
             self.config.read(self.config_file)
             notifications = self.config.getboolean('Preferences',
                                                    'notifications')
-        except (ConfigParser.NoOptionError, ConfigParser.NoSectionError):
+        except (configparser.NoOptionError, configparser.NoSectionError):
             notifications = True
         self.checkbutton_notifications.set_active(notifications)
         return notifications
@@ -105,7 +119,7 @@ class GMountMan:
                 try:
                     icon_filename = self.icon_theme.choose_icon(
                         m.get_icon().get_names(), 24, 0).get_filename()
-                    icon = gtk.gdk.pixbuf_new_from_file(icon_filename)
+                    icon = GdkPixbuf.Pixbuf.new_from_file(icon_filename)
                     name = m.get_name()
                     node = m.get_volume().get_identifier('unix-device')
                     mountpoint = m.get_root().get_path()
@@ -126,7 +140,7 @@ class GMountMan:
                 try:
                     icon_filename = self.icon_theme.choose_icon(
                         v.get_icon().get_names(), 24, 0).get_filename()
-                    icon = gtk.gdk.pixbuf_new_from_file(icon_filename)
+                    icon = GdkPixbuf.Pixbuf.new_from_file(icon_filename)
                 except AttributeError:
                     icon = None
                 name = v.get_name()
@@ -172,7 +186,7 @@ class GMountMan:
             name = volume.get_name()
             icon = self.icon_theme.choose_icon(
                 volume.get_icon().get_names(), 48, 0).get_filename()
-            notification = pynotify.Notification(
+            notification = Notify.Notification.new(
                 _('Device is now safe to remove'), _(
                     'The device %s can now be safely removed') % name, icon)
             notification.set_timeout(3000)
@@ -186,7 +200,7 @@ class GMountMan:
         eject_keys = ['e', 'greek_epsilon']
         open_keys = ['o', 'greek_omicron']
         prefs_keys = ['p', 'greek_pi']
-        key = gtk.gdk.keyval_name(event.keyval).lower()
+        key = Gdk.keyval_name(event.keyval).lower()
         if key in prefs_keys:
             self.dialog_prefs.show()
         else:
@@ -283,8 +297,7 @@ class GMountMan:
         for v in volumes:
             node = v.get_identifier('unix-device')
             if node == device:
-                v.mount(None, self.callback_none,
-                        gio.MOUNT_UNMOUNT_NONE, None, None)
+                v.mount(Gio.MountUnmountFlags.NONE)
                 break
 
     def unmount_device(self, device):
@@ -295,8 +308,7 @@ class GMountMan:
             if volume is not None:
                 node = volume.get_identifier('unix-device')
                 if node == device:
-                    m.unmount(self.callback_none,
-                              gio.MOUNT_UNMOUNT_NONE, None, None)
+                    m.unmount_with_operation(Gio.MountUnmountFlags.NONE)
                     break
 
     def eject_device(self, device):
@@ -304,7 +316,7 @@ class GMountMan:
         for v in volumes:
             node = v.get_identifier('unix-device')
             if node == device:
-                v.eject(self.callback_none, gio.MOUNT_UNMOUNT_NONE, None, None)
+                v.eject_with_operation(Gio.MountUnmountFlags.NONE)
                 break
 
     def open_mountpoint(self, mountpoint):
@@ -406,14 +418,14 @@ class GMountMan:
             os.mkdir(os.path.expanduser('~/.config'))
         try:
             self.config.add_section('Window')
-        except ConfigParser.DuplicateSectionError:
+        except configparser.DuplicateSectionError:
             pass
         try:
             self.config.add_section('Preferences')
-        except ConfigParser.DuplicateSectionError:
+        except configparser.DuplicateSectionError:
             pass
         self.config.set('Window', 'width', width)
-        self.config.set('Window', 'height', height)
+        self.config.set('Window', 'height',height)
         self.config.set('Preferences', 'filemanager', filemanager)
         self.config.set('Preferences', 'notifications',
                         notifications)
@@ -433,10 +445,10 @@ class GMountMan:
             height = self.win_height
         self.write_config(width, height, filemanager,
                           notifications)
-        gtk.main_quit()
+        Gtk.main_quit()
 
     def toggle_main_window(self, data):
-        if self.window.flags() & gtk.VISIBLE:
+        if self.window.flags() & Gtk.VISIBLE:
             self.window.hide()
         else:
             self.window.show()
@@ -469,7 +481,7 @@ class GMountMan:
     # mount/unmount if the device is already mounted/unmounted
     # anyway.
     def on_tray_right_click(self, status, button, time):
-        menu = gtk.Menu()
+        menu = Gtk.Menu()
         for dev in self.devices():
             icon = dev[0]
             name = dev[1]
@@ -478,42 +490,42 @@ class GMountMan:
             can_mount = dev[4]
             can_unmount = dev[5]
             can_eject = dev[6]
-            submenu = gtk.Menu()
-            new_menuitem = gtk.ImageMenuItem(name)
-            img = gtk.Image()
+            submenu = Gtk.Menu()
+            new_menuitem = Gtk.ImageMenuItem(name)
+            img = Gtk.Image()
             img.set_from_pixbuf(icon)
             new_menuitem.set_image(img)
             new_menuitem.set_submenu(submenu)
             if can_unmount:
-                open_menuitem = gtk.ImageMenuItem(gtk.STOCK_OPEN)
+                open_menuitem = Gtk.ImageMenuItem(Gtk.STOCK_OPEN)
                 open_menuitem.connect("activate", self.trayopen, mountpoint)
-                unmount_menuitem = gtk.ImageMenuItem(gtk.STOCK_REMOVE)
+                unmount_menuitem = Gtk.ImageMenuItem(Gtk.STOCK_REMOVE)
                 unmount_menuitem.set_label(_('Unmount'))
                 unmount_menuitem.connect("activate", self.trayunmount, node)
                 submenu.append(open_menuitem)
                 submenu.append(unmount_menuitem)
             else:
                 if can_mount:
-                    mount_menuitem = gtk.ImageMenuItem(gtk.STOCK_ADD)
+                    mount_menuitem = Gtk.ImageMenuItem(Gtk.STOCK_ADD)
                     mount_menuitem.set_label(_('Mount'))
                     mount_menuitem.connect("activate", self.traymount, node)
                     submenu.append(mount_menuitem)
             if can_eject:
-                eject_menuitem = gtk.ImageMenuItem(_('Eject'))
+                eject_menuitem = Gtk.ImageMenuItem(_('Eject'))
                 eject_menuitem.connect("activate", self.trayeject, node)
-                img = gtk.Image()
-                img.set_from_icon_name('media-eject', gtk.ICON_SIZE_MENU)
+                img = Gtk.Image()
+                img.set_from_icon_name('media-eject', Gtk.IconSize.MENU)
                 eject_menuitem.set_image(img)
                 submenu.append(eject_menuitem)
             menu.append(new_menuitem)
-        menu.append(gtk.SeparatorMenuItem())
-        if self.window.flags() & gtk.VISIBLE:
-            menuitem_show = gtk.MenuItem(_("Hide"))
+        menu.append(Gtk.SeparatorMenuItem())
+        if self.window.flags() & Gtk.VISIBLE:
+            menuitem_show = Gtk.MenuItem(_("Hide"))
         else:
-            menuitem_show = gtk.MenuItem(_("Show"))
+            menuitem_show = Gtk.MenuItem(_("Show"))
         menuitem_show.connect("activate", self.toggle_main_window)
         menu.append(menuitem_show)
-        menuitem_exit = gtk.ImageMenuItem(gtk.STOCK_QUIT)
+        menuitem_exit = Gtk.ImageMenuItem(Gtk.STOCK_QUIT)
         menuitem_exit.connect("activate", self.gtk_main_quit)
         menu.append(menuitem_exit)
         menu.show_all()
@@ -535,7 +547,7 @@ class GMountMan:
             self.gtk_main_quit(widget=None)
 
     def __init__(self):
-        builder = gtk.Builder()
+        builder = Gtk.Builder()
         builder.set_translation_domain("gmountman")
         if os.path.exists('gmountman.ui'):
             builder.add_from_file('gmountman.ui')
@@ -613,7 +625,7 @@ class GMountMan:
         self.vm.connect('mount-changed', self.on_devices_changed)
 
         # Tray icon
-        self.trayicon = gtk.StatusIcon()
+        self.trayicon = Gtk.StatusIcon()
         self.trayicon.set_from_icon_name('gmountman')
         self.trayicon.connect('activate', self.on_tray_left_click)
         self.trayicon.connect('popup-menu', self.on_tray_right_click)
@@ -640,15 +652,15 @@ def parse_args(argv):
         app.trayicon.set_visible(True)
     else:
         app.window.show()
-    gtk.main()
+    Gtk.main()
 
 
 def usage():
-    print 'USAGE:', os.path.basename(sys.argv[0]), '[OPTIONS]'
-    print
-    print 'OPTIONS:'
-    print '   -t, --tray         start in system tray'
-    print '   -h, --help         this help message'
+    print('USAGE:', os.path.basename(sys.argv[0]), '[OPTIONS]')
+    print()
+    print('OPTIONS:')
+    print('   -t, --tray         start in system tray')
+    print('   -h, --help         this help message')
 
 if __name__ == "__main__":
     parse_args(sys.argv[1:])
