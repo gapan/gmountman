@@ -424,12 +424,12 @@ class GMountMan:
             self.config.add_section('Preferences')
         except configparser.DuplicateSectionError:
             pass
-        self.config.set('Window', 'width', width)
-        self.config.set('Window', 'height',height)
+        self.config.set('Window', 'width', str(width))
+        self.config.set('Window', 'height', str(height))
         self.config.set('Preferences', 'filemanager', filemanager)
         self.config.set('Preferences', 'notifications',
-                        notifications)
-        with open(self.config_file, 'wb') as configfile:
+                        str(notifications))
+        with open(self.config_file, 'w') as configfile:
             self.config.write(configfile)
 
     def gtk_main_quit(self, widget, data=None):
