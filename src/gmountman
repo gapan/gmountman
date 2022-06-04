@@ -448,7 +448,7 @@ class GMountMan:
         Gtk.main_quit()
 
     def toggle_main_window(self, data):
-        if self.window.flags() & Gtk.VISIBLE:
+        if self.window.get_property('visible'):
             self.window.hide()
         else:
             self.window.show()
@@ -519,7 +519,7 @@ class GMountMan:
                 submenu.append(eject_menuitem)
             menu.append(new_menuitem)
         menu.append(Gtk.SeparatorMenuItem())
-        if self.window.flags() & Gtk.VISIBLE:
+        if self.window.get_property('visible'):
             menuitem_show = Gtk.MenuItem(_("Hide"))
         else:
             menuitem_show = Gtk.MenuItem(_("Show"))
